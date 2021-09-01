@@ -92,6 +92,7 @@ namespace Project
         {
             if(listOfDocs.Text != "Выберите отделение")
             {
+                warning_label.Hide();
                 main_panel.Enabled = true;
             }
         }

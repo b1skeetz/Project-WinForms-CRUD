@@ -29,6 +29,9 @@ namespace Project
 
         private void поискКартыToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Search_Form search = new Search_Form();
+            search.Show();
+            warning_label.Hide();
 
         }
 
@@ -36,6 +39,20 @@ namespace Project
         {
             Form_Add add = new Form_Add();
             add.ShowDialog();
+        }
+
+        private void listOfDocs_TextChanged(object sender, EventArgs e)
+        {
+            if (listOfDocs.Text != "Выберите отделение")
+            {
+                warning_label.Hide();
+                //main_panel.Enabled = true;
+            }
+        }
+
+        private void обновитьТаблицуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
