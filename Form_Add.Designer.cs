@@ -57,6 +57,10 @@ namespace Project
             this.born_Label = new System.Windows.Forms.Label();
             this.fio_Label = new System.Windows.Forms.Label();
             this.warning_label = new System.Windows.Forms.Label();
+            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.создатьБазуДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.создатьТаблицуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьТаблицуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.control_panel.SuspendLayout();
             this.main_panel.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +72,8 @@ namespace Project
             this.control_panel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dataBaseMenu,
             this.reference,
-            this.listOfDocs});
+            this.listOfDocs,
+            this.настройкиToolStripMenuItem});
             this.control_panel.Location = new System.Drawing.Point(0, 0);
             this.control_panel.Name = "control_panel";
             this.control_panel.Size = new System.Drawing.Size(800, 31);
@@ -354,6 +359,34 @@ namespace Project
             this.warning_label.TabIndex = 4;
             this.warning_label.Text = "ВНИМАНИЕ: сначала выберите отделение!";
             // 
+            // настройкиToolStripMenuItem
+            // 
+            this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.создатьБазуДанныхToolStripMenuItem,
+            this.создатьТаблицуToolStripMenuItem,
+            this.удалитьТаблицуToolStripMenuItem});
+            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(102, 27);
+            this.настройкиToolStripMenuItem.Text = "Настройки";
+            // 
+            // создатьБазуДанныхToolStripMenuItem
+            // 
+            this.создатьБазуДанныхToolStripMenuItem.Name = "создатьБазуДанныхToolStripMenuItem";
+            this.создатьБазуДанныхToolStripMenuItem.Size = new System.Drawing.Size(249, 24);
+            this.создатьБазуДанныхToolStripMenuItem.Text = "Создать базу данных";
+            // 
+            // создатьТаблицуToolStripMenuItem
+            // 
+            this.создатьТаблицуToolStripMenuItem.Name = "создатьТаблицуToolStripMenuItem";
+            this.создатьТаблицуToolStripMenuItem.Size = new System.Drawing.Size(249, 24);
+            this.создатьТаблицуToolStripMenuItem.Text = "Создать таблицу";
+            // 
+            // удалитьТаблицуToolStripMenuItem
+            // 
+            this.удалитьТаблицуToolStripMenuItem.Name = "удалитьТаблицуToolStripMenuItem";
+            this.удалитьТаблицуToolStripMenuItem.Size = new System.Drawing.Size(249, 24);
+            this.удалитьТаблицуToolStripMenuItem.Text = "Удалить таблицу";
+            // 
             // Form_Add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,5 +437,9 @@ namespace Project
         private System.Windows.Forms.CheckBox goldenCard_checkBox;
         private System.Windows.Forms.CheckBox ref_checkBox;
         private System.Windows.Forms.Label warning_label;
+        private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem создатьБазуДанныхToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem создатьТаблицуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem удалитьТаблицуToolStripMenuItem;
     }
 }

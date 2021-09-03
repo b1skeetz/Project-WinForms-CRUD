@@ -49,12 +49,10 @@ namespace Project
             // 
             // main_table
             // 
-            this.main_table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.main_table.Location = new System.Drawing.Point(12, 85);
             this.main_table.Name = "main_table";
             this.main_table.Size = new System.Drawing.Size(609, 436);
             this.main_table.TabIndex = 0;
-            this.main_table.Visible = false;
             // 
             // control_panel
             // 
