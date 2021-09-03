@@ -81,3 +81,7 @@ namespace Project
         }
     }
 }
+/*
+ * SELECT * FROM patients.patients;
+INSERT INTO patients.patients (Name, Born_year, Card_num, Address, Doctors_Name, Coming_Date) VALUES ('Иванов Иван Иванович', '1995', '25418653', 'Победы 25', 'Александров Александр Александрович', '03.09.2021 18:00');
+SELECT * FROM patients.patients; */
