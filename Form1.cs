@@ -14,9 +14,9 @@ namespace Project
     public partial class Form1 : Form
     {
         Init_Table init = new Init_Table();
-        string tablename_doc = "doctors";
-        string tablename_patients_ginekolog = "ginekolog";
-        string database = "patients";
+        //string tablename_doc = "doctors";
+        string tablename_patients_ginekolog = "patients_ginecolog";
+        string database = "clinic";
         public Form1()
         {
             InitializeComponent();
@@ -58,15 +58,15 @@ namespace Project
             {
                 warning_label.Hide();
                 switch (listOfDocs.SelectedIndex)
-                {
-                    case 1: main_table.DataSource = init.InitTable(tablename_patients_ginekolog, database);
-                        main_table.Columns["idPatients"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        main_table.Columns["Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        main_table.Columns["Card_num"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        main_table.Columns["Doctors_Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        main_table.Columns["Coming_Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        main_table.Columns["Other"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                {                    
+                    case 1:
+                        searchBy_comboBox.Items.Clear();
+                        main_table.DataSource = init.InitTable(tablename_patients_ginekolog, database);
+                        init.autosize(main_table);
+                        for(int i = 0; i < main_table.Columns.Count; i++)
+                        {
+                            searchBy_comboBox.Items.Add(main_table.Columns[i].Name);
+                        }
                         //main_table.Columns["idPatients"].Resizable 
                         break;
                 }
@@ -77,7 +77,45 @@ namespace Project
 
         private void обновитьТаблицуToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void main_table_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void submit_button_Click(object sender, EventArgs e)
+        {
+            if (listOfDocs.Text != "Выберите отделение")
+            {
+                warning_label.Hide();
+                switch (listOfDocs.SelectedIndex)
+                {
+                    case 1:
+                        main_table.DataSource = init.searchBy(tablename_patients_ginekolog, database, searchBy_textBox, searchBy_comboBox);
+                        main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Card_num"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Doctors_Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Coming_Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Other"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        for (int i = 0; i < main_table.Columns.Count; i++)
+                        {
+                            searchBy_comboBox.Items.Add(main_table.Columns[i].Name);
+                        }
+                        //main_table.Columns["idPatients"].Resizable 
+                        break;
+                }
+
+                //main_panel.Enabled = true;
+            }
         }
     }
 }

@@ -40,9 +40,10 @@ namespace Project
             this.warning_label = new System.Windows.Forms.Label();
             this.delete_button = new System.Windows.Forms.Button();
             this.edit_button = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.searchBy_comboBox = new System.Windows.Forms.ComboBox();
             this.searchBy_label = new System.Windows.Forms.Label();
             this.submit_button = new System.Windows.Forms.Button();
+            this.searchBy_textBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.main_table)).BeginInit();
             this.control_panel.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +54,7 @@ namespace Project
             this.main_table.Name = "main_table";
             this.main_table.Size = new System.Drawing.Size(609, 436);
             this.main_table.TabIndex = 0;
+            this.main_table.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.main_table_CellContentClick);
             // 
             // control_panel
             // 
@@ -156,14 +158,14 @@ namespace Project
             this.edit_button.Text = "Редактировать";
             this.edit_button.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // searchBy_comboBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(673, 139);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 27);
-            this.comboBox1.TabIndex = 8;
+            this.searchBy_comboBox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchBy_comboBox.FormattingEnabled = true;
+            this.searchBy_comboBox.Location = new System.Drawing.Point(673, 139);
+            this.searchBy_comboBox.Name = "searchBy_comboBox";
+            this.searchBy_comboBox.Size = new System.Drawing.Size(158, 27);
+            this.searchBy_comboBox.TabIndex = 8;
             // 
             // searchBy_label
             // 
@@ -178,21 +180,31 @@ namespace Project
             // submit_button
             // 
             this.submit_button.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.submit_button.Location = new System.Drawing.Point(673, 180);
+            this.submit_button.Location = new System.Drawing.Point(673, 214);
             this.submit_button.Name = "submit_button";
             this.submit_button.Size = new System.Drawing.Size(158, 37);
             this.submit_button.TabIndex = 10;
             this.submit_button.Text = "Подтвердить";
             this.submit_button.UseVisualStyleBackColor = true;
+            this.submit_button.Click += new System.EventHandler(this.submit_button_Click);
+            // 
+            // searchBy_textBox
+            // 
+            this.searchBy_textBox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchBy_textBox.Location = new System.Drawing.Point(673, 180);
+            this.searchBy_textBox.Name = "searchBy_textBox";
+            this.searchBy_textBox.Size = new System.Drawing.Size(158, 26);
+            this.searchBy_textBox.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 533);
+            this.Controls.Add(this.searchBy_textBox);
             this.Controls.Add(this.submit_button);
             this.Controls.Add(this.searchBy_label);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.searchBy_comboBox);
             this.Controls.Add(this.edit_button);
             this.Controls.Add(this.delete_button);
             this.Controls.Add(this.warning_label);
@@ -201,6 +213,7 @@ namespace Project
             this.MainMenuStrip = this.control_panel;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.main_table)).EndInit();
             this.control_panel.ResumeLayout(false);
             this.control_panel.PerformLayout();
@@ -222,9 +235,10 @@ namespace Project
         private System.Windows.Forms.Label warning_label;
         private System.Windows.Forms.Button delete_button;
         private System.Windows.Forms.Button edit_button;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox searchBy_comboBox;
         private System.Windows.Forms.Label searchBy_label;
         private System.Windows.Forms.Button submit_button;
+        private System.Windows.Forms.TextBox searchBy_textBox;
     }
 }
 
