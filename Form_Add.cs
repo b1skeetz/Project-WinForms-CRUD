@@ -47,10 +47,6 @@ namespace Project
             doc_comboBox.Text = "";
             listOfDocs.Text = "Выберите отделение";
             others_textBox.Clear();
-            goldenCard_checkBox.Checked = false;
-            hospit_checkBox.Checked = false;
-            ref_checkBox.Checked = false;
-            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -92,8 +88,41 @@ namespace Project
         {
             if(listOfDocs.Text != "Выберите отделение")
             {
-                warning_label.Hide();
                 main_panel.Enabled = true;
+                if (listOfDocs.Text != "Выберите отделение")
+                {
+                    warning_label.Hide();
+                    switch (listOfDocs.SelectedIndex)
+                    {
+                        case 0:
+                            
+                            break;
+                        case 1:
+                            
+                            break;
+                        case 2:
+                            
+                            break;
+                        case 3:
+                            
+                            break;
+                        case 4:
+                            
+                            break;
+                        case 5:
+                            
+                            break;
+                        case 6:
+                            
+                            break;
+                        case 7:
+                            
+                            break;
+                        default:
+                            MessageBox.Show("Table error!");
+                            break;
+                    }
+                }
             }
         }
     }

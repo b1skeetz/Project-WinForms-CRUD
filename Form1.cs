@@ -15,7 +15,14 @@ namespace Project
     {
         Init_Table init = new Init_Table();
         //string tablename_doc = "doctors";
+        string tablename_patients_proktolog = "patients_proktolog";
         string tablename_patients_ginekolog = "patients_ginecolog";
+        string tablename_patients_dermatolog = "patients_dermatolog";
+        string tablename_patients_urolog = "patients_urolog";
+        string tablename_patients_mammolog = "patients_mammolog";
+        string tablename_patients_lor = "patients_lor";
+        string tablename_patients_nevropatolog = "patients_nevropatolog";
+
         string database = "clinic";
         public Form1()
         {
@@ -28,15 +35,7 @@ namespace Project
                 case 'Гинеколог': ;
             }*/
 
-        private void control_panel_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void listOfDocs_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void поискКартыToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -58,39 +57,60 @@ namespace Project
             {
                 warning_label.Hide();
                 switch (listOfDocs.SelectedIndex)
-                {                    
+                {
+                    case 0:
+                        init.table_changed(searchBy_comboBox, tablename_patients_proktolog, database, main_table);
+                        break;
                     case 1:
-                        searchBy_comboBox.Items.Clear();
-                        main_table.DataSource = init.InitTable(tablename_patients_ginekolog, database);
-                        init.autosize(main_table);
-                        for(int i = 0; i < main_table.Columns.Count; i++)
-                        {
-                            searchBy_comboBox.Items.Add(main_table.Columns[i].Name);
-                        }
-                        //main_table.Columns["idPatients"].Resizable 
+                        init.table_changed(searchBy_comboBox, tablename_patients_ginekolog, database, main_table);
+                        break;
+                    case 2:
+                        init.table_changed(searchBy_comboBox, tablename_patients_urolog, database, main_table);
+                        break;
+                    case 3:
+                        init.table_changed(searchBy_comboBox, tablename_patients_urolog, database, main_table);
+                        break;
+                    case 4:
+                        init.table_changed(searchBy_comboBox, tablename_patients_mammolog, database, main_table);
+                        break;
+                    case 5:
+                        init.table_changed(searchBy_comboBox, tablename_patients_dermatolog, database, main_table);
+                        break;
+                    case 6:
+                        init.table_changed(searchBy_comboBox, tablename_patients_lor, database, main_table);
+                        break;
+                    case 7:
+                        init.table_changed(searchBy_comboBox, tablename_patients_nevropatolog, database, main_table);
+                        break;
+                    default: MessageBox.Show("Table error!");
                         break;
                 }
-                
-                //main_panel.Enabled = true;
             }
         }
 
         private void обновитьТаблицуToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            searchBy_textBox.Clear();
+            searchBy_comboBox.Items.Clear();
+            searchBy_comboBox.Text = "";
+            main_table.DataSource = init.InitTable(tablename_patients_ginekolog, database);
+            init.autosize(main_table);
+            for (int i = 0; i < main_table.Columns.Count; i++)
+            {
+                searchBy_comboBox.Items.Add(main_table.Columns[i].Name);
+            }
         }
 
-        private void main_table_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+     
 
         private void Form1_Load(object sender, EventArgs e)
         {
             
         }
 
-        private void submit_button_Click(object sender, EventArgs e)
+     
+
+        private void searchBy_textBox_TextChanged(object sender, EventArgs e)
         {
             if (listOfDocs.Text != "Выберите отделение")
             {
@@ -110,16 +130,31 @@ namespace Project
                         {
                             searchBy_comboBox.Items.Add(main_table.Columns[i].Name);
                         }
-                        //main_table.Columns["idPatients"].Resizable 
                         break;
                 }
 
-                //main_panel.Enabled = true;
+                
+            }
+        }
+
+     
+
+        private void searchBy_comboBox_TextChanged(object sender, EventArgs e)
+        {
+            searchBy_textBox.Enabled = true;
+        }
+
+        private void clear_button_Click(object sender, EventArgs e)
+        {
+            searchBy_textBox.Clear();
+            searchBy_comboBox.Items.Clear();
+            searchBy_comboBox.Text = "";
+            main_table.DataSource = init.InitTable(tablename_patients_ginekolog, database);
+            init.autosize(main_table);
+            for (int i = 0; i < main_table.Columns.Count; i++)
+            {
+                searchBy_comboBox.Items.Add(main_table.Columns[i].Name);
             }
         }
     }
 }
-/*
- * SELECT * FROM patients.patients;
-INSERT INTO patients.patients (Name, Born_year, Card_num, Address, Doctors_Name, Coming_Date) VALUES ('Иванов Иван Иванович', '1995', '25418653', 'Победы 25', 'Александров Александр Александрович', '03.09.2021 18:00');
-SELECT * FROM patients.patients; */

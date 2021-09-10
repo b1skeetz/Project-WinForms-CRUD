@@ -38,9 +38,6 @@ namespace Project
             this.listOfDocs = new System.Windows.Forms.ToolStripComboBox();
             this.warning_label = new System.Windows.Forms.Label();
             this.main_panel = new System.Windows.Forms.Panel();
-            this.ref_checkBox = new System.Windows.Forms.CheckBox();
-            this.hospit_checkBox = new System.Windows.Forms.CheckBox();
-            this.goldenCard_checkBox = new System.Windows.Forms.CheckBox();
             this.visit_textBox = new System.Windows.Forms.TextBox();
             this.visit_label = new System.Windows.Forms.Label();
             this.clear_button = new System.Windows.Forms.Button();
@@ -141,9 +138,6 @@ namespace Project
             // 
             // main_panel
             // 
-            this.main_panel.Controls.Add(this.ref_checkBox);
-            this.main_panel.Controls.Add(this.hospit_checkBox);
-            this.main_panel.Controls.Add(this.goldenCard_checkBox);
             this.main_panel.Controls.Add(this.visit_textBox);
             this.main_panel.Controls.Add(this.visit_label);
             this.main_panel.Controls.Add(this.clear_button);
@@ -166,39 +160,6 @@ namespace Project
             this.main_panel.Size = new System.Drawing.Size(721, 340);
             this.main_panel.TabIndex = 7;
             this.main_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.main_panel_Paint);
-            // 
-            // ref_checkBox
-            // 
-            this.ref_checkBox.AutoSize = true;
-            this.ref_checkBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ref_checkBox.Location = new System.Drawing.Point(258, 250);
-            this.ref_checkBox.Name = "ref_checkBox";
-            this.ref_checkBox.Size = new System.Drawing.Size(139, 22);
-            this.ref_checkBox.TabIndex = 21;
-            this.ref_checkBox.Text = "Выдана справка";
-            this.ref_checkBox.UseVisualStyleBackColor = true;
-            // 
-            // hospit_checkBox
-            // 
-            this.hospit_checkBox.AutoSize = true;
-            this.hospit_checkBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.hospit_checkBox.Location = new System.Drawing.Point(258, 222);
-            this.hospit_checkBox.Name = "hospit_checkBox";
-            this.hospit_checkBox.Size = new System.Drawing.Size(243, 22);
-            this.hospit_checkBox.TabIndex = 20;
-            this.hospit_checkBox.Text = "Отправлен на госпитализацию";
-            this.hospit_checkBox.UseVisualStyleBackColor = true;
-            // 
-            // goldenCard_checkBox
-            // 
-            this.goldenCard_checkBox.AutoSize = true;
-            this.goldenCard_checkBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.goldenCard_checkBox.Location = new System.Drawing.Point(258, 194);
-            this.goldenCard_checkBox.Name = "goldenCard_checkBox";
-            this.goldenCard_checkBox.Size = new System.Drawing.Size(219, 22);
-            this.goldenCard_checkBox.TabIndex = 19;
-            this.goldenCard_checkBox.Text = "Получил золотую карточку";
-            this.goldenCard_checkBox.UseVisualStyleBackColor = true;
             // 
             // visit_textBox
             // 
@@ -380,9 +341,6 @@ namespace Project
         private System.Windows.Forms.ToolStripComboBox listOfDocs;
         private System.Windows.Forms.Label warning_label;
         private System.Windows.Forms.Panel main_panel;
-        private System.Windows.Forms.CheckBox ref_checkBox;
-        private System.Windows.Forms.CheckBox hospit_checkBox;
-        private System.Windows.Forms.CheckBox goldenCard_checkBox;
         private System.Windows.Forms.TextBox visit_textBox;
         private System.Windows.Forms.Label visit_label;
         private System.Windows.Forms.Button clear_button;

@@ -42,8 +42,8 @@ namespace Project
             this.edit_button = new System.Windows.Forms.Button();
             this.searchBy_comboBox = new System.Windows.Forms.ComboBox();
             this.searchBy_label = new System.Windows.Forms.Label();
-            this.submit_button = new System.Windows.Forms.Button();
             this.searchBy_textBox = new System.Windows.Forms.TextBox();
+            this.clear_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.main_table)).BeginInit();
             this.control_panel.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +54,6 @@ namespace Project
             this.main_table.Name = "main_table";
             this.main_table.Size = new System.Drawing.Size(609, 436);
             this.main_table.TabIndex = 0;
-            this.main_table.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.main_table_CellContentClick);
             // 
             // control_panel
             // 
@@ -69,7 +68,6 @@ namespace Project
             this.control_panel.Size = new System.Drawing.Size(871, 31);
             this.control_panel.TabIndex = 1;
             this.control_panel.Text = "menuStrip1";
-            this.control_panel.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.control_panel_ItemClicked);
             // 
             // dataBaseMenu
             // 
@@ -124,7 +122,6 @@ namespace Project
             this.listOfDocs.Name = "listOfDocs";
             this.listOfDocs.Size = new System.Drawing.Size(250, 27);
             this.listOfDocs.Text = "Выберите отделение";
-            this.listOfDocs.Click += new System.EventHandler(this.listOfDocs_Click);
             this.listOfDocs.TextChanged += new System.EventHandler(this.listOfDocs_TextChanged);
             // 
             // warning_label
@@ -166,6 +163,7 @@ namespace Project
             this.searchBy_comboBox.Name = "searchBy_comboBox";
             this.searchBy_comboBox.Size = new System.Drawing.Size(158, 27);
             this.searchBy_comboBox.TabIndex = 8;
+            this.searchBy_comboBox.TextChanged += new System.EventHandler(this.searchBy_comboBox_TextChanged);
             // 
             // searchBy_label
             // 
@@ -177,32 +175,34 @@ namespace Project
             this.searchBy_label.TabIndex = 9;
             this.searchBy_label.Text = " Поиск по:";
             // 
-            // submit_button
-            // 
-            this.submit_button.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.submit_button.Location = new System.Drawing.Point(673, 214);
-            this.submit_button.Name = "submit_button";
-            this.submit_button.Size = new System.Drawing.Size(158, 37);
-            this.submit_button.TabIndex = 10;
-            this.submit_button.Text = "Подтвердить";
-            this.submit_button.UseVisualStyleBackColor = true;
-            this.submit_button.Click += new System.EventHandler(this.submit_button_Click);
-            // 
             // searchBy_textBox
             // 
+            this.searchBy_textBox.Enabled = false;
             this.searchBy_textBox.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.searchBy_textBox.Location = new System.Drawing.Point(673, 180);
             this.searchBy_textBox.Name = "searchBy_textBox";
             this.searchBy_textBox.Size = new System.Drawing.Size(158, 26);
             this.searchBy_textBox.TabIndex = 11;
+            this.searchBy_textBox.TextChanged += new System.EventHandler(this.searchBy_textBox_TextChanged);
+            // 
+            // clear_button
+            // 
+            this.clear_button.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clear_button.Location = new System.Drawing.Point(673, 225);
+            this.clear_button.Name = "clear_button";
+            this.clear_button.Size = new System.Drawing.Size(158, 37);
+            this.clear_button.TabIndex = 12;
+            this.clear_button.Text = "Очистить";
+            this.clear_button.UseVisualStyleBackColor = true;
+            this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 533);
+            this.Controls.Add(this.clear_button);
             this.Controls.Add(this.searchBy_textBox);
-            this.Controls.Add(this.submit_button);
             this.Controls.Add(this.searchBy_label);
             this.Controls.Add(this.searchBy_comboBox);
             this.Controls.Add(this.edit_button);
@@ -237,8 +237,8 @@ namespace Project
         private System.Windows.Forms.Button edit_button;
         private System.Windows.Forms.ComboBox searchBy_comboBox;
         private System.Windows.Forms.Label searchBy_label;
-        private System.Windows.Forms.Button submit_button;
         private System.Windows.Forms.TextBox searchBy_textBox;
+        private System.Windows.Forms.Button clear_button;
     }
 }
 

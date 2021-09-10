@@ -36,10 +36,11 @@ namespace Project
             this.отменаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reference = new System.Windows.Forms.ToolStripMenuItem();
             this.listOfDocs = new System.Windows.Forms.ToolStripComboBox();
+            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.создатьБазуДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.создатьТаблицуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьТаблицуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.main_panel = new System.Windows.Forms.Panel();
-            this.ref_checkBox = new System.Windows.Forms.CheckBox();
-            this.hospit_checkBox = new System.Windows.Forms.CheckBox();
-            this.goldenCard_checkBox = new System.Windows.Forms.CheckBox();
             this.visit_textBox = new System.Windows.Forms.TextBox();
             this.visit_label = new System.Windows.Forms.Label();
             this.clear_button = new System.Windows.Forms.Button();
@@ -57,10 +58,6 @@ namespace Project
             this.born_Label = new System.Windows.Forms.Label();
             this.fio_Label = new System.Windows.Forms.Label();
             this.warning_label = new System.Windows.Forms.Label();
-            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьБазуДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьТаблицуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьТаблицуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.control_panel.SuspendLayout();
             this.main_panel.SuspendLayout();
             this.SuspendLayout();
@@ -133,232 +130,6 @@ namespace Project
             this.listOfDocs.Text = "Выберите отделение";
             this.listOfDocs.TextChanged += new System.EventHandler(this.listOfDocs_TextChanged);
             // 
-            // main_panel
-            // 
-            this.main_panel.Controls.Add(this.ref_checkBox);
-            this.main_panel.Controls.Add(this.hospit_checkBox);
-            this.main_panel.Controls.Add(this.goldenCard_checkBox);
-            this.main_panel.Controls.Add(this.visit_textBox);
-            this.main_panel.Controls.Add(this.visit_label);
-            this.main_panel.Controls.Add(this.clear_button);
-            this.main_panel.Controls.Add(this.save_button);
-            this.main_panel.Controls.Add(this.others_textBox);
-            this.main_panel.Controls.Add(this.others_label);
-            this.main_panel.Controls.Add(this.doc_comboBox);
-            this.main_panel.Controls.Add(this.doc_label);
-            this.main_panel.Controls.Add(this.number_textBox);
-            this.main_panel.Controls.Add(this.number_label);
-            this.main_panel.Controls.Add(this.address_textBox);
-            this.main_panel.Controls.Add(this.address_label);
-            this.main_panel.Controls.Add(this.years_comboBox);
-            this.main_panel.Controls.Add(this.fio_textBox);
-            this.main_panel.Controls.Add(this.born_Label);
-            this.main_panel.Controls.Add(this.fio_Label);
-            this.main_panel.Enabled = false;
-            this.main_panel.Location = new System.Drawing.Point(38, 83);
-            this.main_panel.Name = "main_panel";
-            this.main_panel.Size = new System.Drawing.Size(721, 340);
-            this.main_panel.TabIndex = 3;
-            this.main_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // ref_checkBox
-            // 
-            this.ref_checkBox.AutoSize = true;
-            this.ref_checkBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ref_checkBox.Location = new System.Drawing.Point(258, 250);
-            this.ref_checkBox.Name = "ref_checkBox";
-            this.ref_checkBox.Size = new System.Drawing.Size(139, 22);
-            this.ref_checkBox.TabIndex = 21;
-            this.ref_checkBox.Text = "Выдана справка";
-            this.ref_checkBox.UseVisualStyleBackColor = true;
-            // 
-            // hospit_checkBox
-            // 
-            this.hospit_checkBox.AutoSize = true;
-            this.hospit_checkBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.hospit_checkBox.Location = new System.Drawing.Point(258, 222);
-            this.hospit_checkBox.Name = "hospit_checkBox";
-            this.hospit_checkBox.Size = new System.Drawing.Size(243, 22);
-            this.hospit_checkBox.TabIndex = 20;
-            this.hospit_checkBox.Text = "Отправлен на госпитализацию";
-            this.hospit_checkBox.UseVisualStyleBackColor = true;
-            // 
-            // goldenCard_checkBox
-            // 
-            this.goldenCard_checkBox.AutoSize = true;
-            this.goldenCard_checkBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.goldenCard_checkBox.Location = new System.Drawing.Point(258, 194);
-            this.goldenCard_checkBox.Name = "goldenCard_checkBox";
-            this.goldenCard_checkBox.Size = new System.Drawing.Size(219, 22);
-            this.goldenCard_checkBox.TabIndex = 19;
-            this.goldenCard_checkBox.Text = "Получил золотую карточку";
-            this.goldenCard_checkBox.UseVisualStyleBackColor = true;
-            // 
-            // visit_textBox
-            // 
-            this.visit_textBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.visit_textBox.Location = new System.Drawing.Point(166, 121);
-            this.visit_textBox.Name = "visit_textBox";
-            this.visit_textBox.Size = new System.Drawing.Size(493, 25);
-            this.visit_textBox.TabIndex = 18;
-            this.visit_textBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // visit_label
-            // 
-            this.visit_label.AutoSize = true;
-            this.visit_label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.visit_label.Location = new System.Drawing.Point(15, 121);
-            this.visit_label.Name = "visit_label";
-            this.visit_label.Size = new System.Drawing.Size(104, 18);
-            this.visit_label.TabIndex = 17;
-            this.visit_label.Text = "Дата прихода";
-            this.visit_label.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // clear_button
-            // 
-            this.clear_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clear_button.Location = new System.Drawing.Point(380, 284);
-            this.clear_button.Name = "clear_button";
-            this.clear_button.Size = new System.Drawing.Size(94, 33);
-            this.clear_button.TabIndex = 16;
-            this.clear_button.Text = "Очистить";
-            this.clear_button.UseVisualStyleBackColor = true;
-            this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
-            // 
-            // save_button
-            // 
-            this.save_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.save_button.Location = new System.Drawing.Point(252, 284);
-            this.save_button.Name = "save_button";
-            this.save_button.Size = new System.Drawing.Size(94, 33);
-            this.save_button.TabIndex = 15;
-            this.save_button.Text = "Сохранить";
-            this.save_button.UseVisualStyleBackColor = true;
-            this.save_button.Click += new System.EventHandler(this.save_button_Click);
-            // 
-            // others_textBox
-            // 
-            this.others_textBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.others_textBox.Location = new System.Drawing.Point(166, 152);
-            this.others_textBox.Name = "others_textBox";
-            this.others_textBox.Size = new System.Drawing.Size(493, 25);
-            this.others_textBox.TabIndex = 11;
-            this.others_textBox.TextChanged += new System.EventHandler(this.others_textBox_TextChanged);
-            // 
-            // others_label
-            // 
-            this.others_label.AutoSize = true;
-            this.others_label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.others_label.Location = new System.Drawing.Point(15, 152);
-            this.others_label.Name = "others_label";
-            this.others_label.Size = new System.Drawing.Size(64, 18);
-            this.others_label.TabIndex = 10;
-            this.others_label.Text = "Другое:";
-            // 
-            // doc_comboBox
-            // 
-            this.doc_comboBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.doc_comboBox.FormattingEnabled = true;
-            this.doc_comboBox.Location = new System.Drawing.Point(376, 88);
-            this.doc_comboBox.Name = "doc_comboBox";
-            this.doc_comboBox.Size = new System.Drawing.Size(283, 26);
-            this.doc_comboBox.TabIndex = 9;
-            // 
-            // doc_label
-            // 
-            this.doc_label.AutoSize = true;
-            this.doc_label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.doc_label.Location = new System.Drawing.Point(314, 91);
-            this.doc_label.Name = "doc_label";
-            this.doc_label.Size = new System.Drawing.Size(48, 18);
-            this.doc_label.TabIndex = 8;
-            this.doc_label.Text = "Врач:";
-            // 
-            // number_textBox
-            // 
-            this.number_textBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.number_textBox.Location = new System.Drawing.Point(166, 88);
-            this.number_textBox.Name = "number_textBox";
-            this.number_textBox.Size = new System.Drawing.Size(121, 25);
-            this.number_textBox.TabIndex = 7;
-            // 
-            // number_label
-            // 
-            this.number_label.AutoSize = true;
-            this.number_label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.number_label.Location = new System.Drawing.Point(15, 88);
-            this.number_label.Name = "number_label";
-            this.number_label.Size = new System.Drawing.Size(112, 18);
-            this.number_label.TabIndex = 6;
-            this.number_label.Text = "Номер карты: ";
-            // 
-            // address_textBox
-            // 
-            this.address_textBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.address_textBox.Location = new System.Drawing.Point(376, 50);
-            this.address_textBox.Name = "address_textBox";
-            this.address_textBox.Size = new System.Drawing.Size(283, 25);
-            this.address_textBox.TabIndex = 5;
-            // 
-            // address_label
-            // 
-            this.address_label.AutoSize = true;
-            this.address_label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.address_label.Location = new System.Drawing.Point(314, 53);
-            this.address_label.Name = "address_label";
-            this.address_label.Size = new System.Drawing.Size(56, 18);
-            this.address_label.TabIndex = 4;
-            this.address_label.Text = "Адрес:";
-            // 
-            // years_comboBox
-            // 
-            this.years_comboBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.years_comboBox.FormattingEnabled = true;
-            this.years_comboBox.Location = new System.Drawing.Point(166, 50);
-            this.years_comboBox.Name = "years_comboBox";
-            this.years_comboBox.Size = new System.Drawing.Size(121, 26);
-            this.years_comboBox.TabIndex = 3;
-            this.years_comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // fio_textBox
-            // 
-            this.fio_textBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.fio_textBox.Location = new System.Drawing.Point(166, 15);
-            this.fio_textBox.Name = "fio_textBox";
-            this.fio_textBox.Size = new System.Drawing.Size(493, 25);
-            this.fio_textBox.TabIndex = 2;
-            // 
-            // born_Label
-            // 
-            this.born_Label.AutoSize = true;
-            this.born_Label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.born_Label.Location = new System.Drawing.Point(15, 50);
-            this.born_Label.Name = "born_Label";
-            this.born_Label.Size = new System.Drawing.Size(120, 18);
-            this.born_Label.TabIndex = 1;
-            this.born_Label.Text = "Год рождения: ";
-            // 
-            // fio_Label
-            // 
-            this.fio_Label.AutoSize = true;
-            this.fio_Label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.fio_Label.Location = new System.Drawing.Point(15, 17);
-            this.fio_Label.Name = "fio_Label";
-            this.fio_Label.Size = new System.Drawing.Size(136, 18);
-            this.fio_Label.TabIndex = 0;
-            this.fio_Label.Text = "Ф.И.О. пациента:";
-            // 
-            // warning_label
-            // 
-            this.warning_label.AutoSize = true;
-            this.warning_label.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.warning_label.ForeColor = System.Drawing.Color.Red;
-            this.warning_label.Location = new System.Drawing.Point(223, 54);
-            this.warning_label.Name = "warning_label";
-            this.warning_label.Size = new System.Drawing.Size(380, 22);
-            this.warning_label.TabIndex = 4;
-            this.warning_label.Text = "ВНИМАНИЕ: сначала выберите отделение!";
-            // 
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -386,6 +157,196 @@ namespace Project
             this.удалитьТаблицуToolStripMenuItem.Name = "удалитьТаблицуToolStripMenuItem";
             this.удалитьТаблицуToolStripMenuItem.Size = new System.Drawing.Size(249, 24);
             this.удалитьТаблицуToolStripMenuItem.Text = "Удалить таблицу";
+            // 
+            // main_panel
+            // 
+            this.main_panel.Controls.Add(this.visit_textBox);
+            this.main_panel.Controls.Add(this.visit_label);
+            this.main_panel.Controls.Add(this.clear_button);
+            this.main_panel.Controls.Add(this.save_button);
+            this.main_panel.Controls.Add(this.others_textBox);
+            this.main_panel.Controls.Add(this.others_label);
+            this.main_panel.Controls.Add(this.doc_comboBox);
+            this.main_panel.Controls.Add(this.doc_label);
+            this.main_panel.Controls.Add(this.number_textBox);
+            this.main_panel.Controls.Add(this.number_label);
+            this.main_panel.Controls.Add(this.address_textBox);
+            this.main_panel.Controls.Add(this.address_label);
+            this.main_panel.Controls.Add(this.years_comboBox);
+            this.main_panel.Controls.Add(this.fio_textBox);
+            this.main_panel.Controls.Add(this.born_Label);
+            this.main_panel.Controls.Add(this.fio_Label);
+            this.main_panel.Enabled = false;
+            this.main_panel.Location = new System.Drawing.Point(38, 83);
+            this.main_panel.Name = "main_panel";
+            this.main_panel.Size = new System.Drawing.Size(721, 340);
+            this.main_panel.TabIndex = 3;
+            this.main_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // visit_textBox
+            // 
+            this.visit_textBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.visit_textBox.Location = new System.Drawing.Point(182, 149);
+            this.visit_textBox.Name = "visit_textBox";
+            this.visit_textBox.Size = new System.Drawing.Size(493, 25);
+            this.visit_textBox.TabIndex = 18;
+            this.visit_textBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // visit_label
+            // 
+            this.visit_label.AutoSize = true;
+            this.visit_label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.visit_label.Location = new System.Drawing.Point(31, 149);
+            this.visit_label.Name = "visit_label";
+            this.visit_label.Size = new System.Drawing.Size(104, 18);
+            this.visit_label.TabIndex = 17;
+            this.visit_label.Text = "Дата прихода";
+            this.visit_label.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // clear_button
+            // 
+            this.clear_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clear_button.Location = new System.Drawing.Point(392, 244);
+            this.clear_button.Name = "clear_button";
+            this.clear_button.Size = new System.Drawing.Size(94, 33);
+            this.clear_button.TabIndex = 16;
+            this.clear_button.Text = "Очистить";
+            this.clear_button.UseVisualStyleBackColor = true;
+            this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
+            // 
+            // save_button
+            // 
+            this.save_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.save_button.Location = new System.Drawing.Point(264, 244);
+            this.save_button.Name = "save_button";
+            this.save_button.Size = new System.Drawing.Size(94, 33);
+            this.save_button.TabIndex = 15;
+            this.save_button.Text = "Сохранить";
+            this.save_button.UseVisualStyleBackColor = true;
+            this.save_button.Click += new System.EventHandler(this.save_button_Click);
+            // 
+            // others_textBox
+            // 
+            this.others_textBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.others_textBox.Location = new System.Drawing.Point(182, 180);
+            this.others_textBox.Name = "others_textBox";
+            this.others_textBox.Size = new System.Drawing.Size(493, 25);
+            this.others_textBox.TabIndex = 11;
+            this.others_textBox.TextChanged += new System.EventHandler(this.others_textBox_TextChanged);
+            // 
+            // others_label
+            // 
+            this.others_label.AutoSize = true;
+            this.others_label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.others_label.Location = new System.Drawing.Point(31, 180);
+            this.others_label.Name = "others_label";
+            this.others_label.Size = new System.Drawing.Size(64, 18);
+            this.others_label.TabIndex = 10;
+            this.others_label.Text = "Другое:";
+            // 
+            // doc_comboBox
+            // 
+            this.doc_comboBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.doc_comboBox.FormattingEnabled = true;
+            this.doc_comboBox.Location = new System.Drawing.Point(392, 116);
+            this.doc_comboBox.Name = "doc_comboBox";
+            this.doc_comboBox.Size = new System.Drawing.Size(283, 26);
+            this.doc_comboBox.TabIndex = 9;
+            // 
+            // doc_label
+            // 
+            this.doc_label.AutoSize = true;
+            this.doc_label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.doc_label.Location = new System.Drawing.Point(330, 119);
+            this.doc_label.Name = "doc_label";
+            this.doc_label.Size = new System.Drawing.Size(48, 18);
+            this.doc_label.TabIndex = 8;
+            this.doc_label.Text = "Врач:";
+            // 
+            // number_textBox
+            // 
+            this.number_textBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.number_textBox.Location = new System.Drawing.Point(182, 116);
+            this.number_textBox.Name = "number_textBox";
+            this.number_textBox.Size = new System.Drawing.Size(121, 25);
+            this.number_textBox.TabIndex = 7;
+            // 
+            // number_label
+            // 
+            this.number_label.AutoSize = true;
+            this.number_label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.number_label.Location = new System.Drawing.Point(31, 116);
+            this.number_label.Name = "number_label";
+            this.number_label.Size = new System.Drawing.Size(112, 18);
+            this.number_label.TabIndex = 6;
+            this.number_label.Text = "Номер карты: ";
+            // 
+            // address_textBox
+            // 
+            this.address_textBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.address_textBox.Location = new System.Drawing.Point(392, 78);
+            this.address_textBox.Name = "address_textBox";
+            this.address_textBox.Size = new System.Drawing.Size(283, 25);
+            this.address_textBox.TabIndex = 5;
+            // 
+            // address_label
+            // 
+            this.address_label.AutoSize = true;
+            this.address_label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.address_label.Location = new System.Drawing.Point(330, 81);
+            this.address_label.Name = "address_label";
+            this.address_label.Size = new System.Drawing.Size(56, 18);
+            this.address_label.TabIndex = 4;
+            this.address_label.Text = "Адрес:";
+            // 
+            // years_comboBox
+            // 
+            this.years_comboBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.years_comboBox.FormattingEnabled = true;
+            this.years_comboBox.Location = new System.Drawing.Point(182, 78);
+            this.years_comboBox.Name = "years_comboBox";
+            this.years_comboBox.Size = new System.Drawing.Size(121, 26);
+            this.years_comboBox.TabIndex = 3;
+            this.years_comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // fio_textBox
+            // 
+            this.fio_textBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fio_textBox.Location = new System.Drawing.Point(182, 43);
+            this.fio_textBox.Name = "fio_textBox";
+            this.fio_textBox.Size = new System.Drawing.Size(493, 25);
+            this.fio_textBox.TabIndex = 2;
+            // 
+            // born_Label
+            // 
+            this.born_Label.AutoSize = true;
+            this.born_Label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.born_Label.Location = new System.Drawing.Point(31, 78);
+            this.born_Label.Name = "born_Label";
+            this.born_Label.Size = new System.Drawing.Size(120, 18);
+            this.born_Label.TabIndex = 1;
+            this.born_Label.Text = "Год рождения: ";
+            // 
+            // fio_Label
+            // 
+            this.fio_Label.AutoSize = true;
+            this.fio_Label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fio_Label.Location = new System.Drawing.Point(31, 45);
+            this.fio_Label.Name = "fio_Label";
+            this.fio_Label.Size = new System.Drawing.Size(136, 18);
+            this.fio_Label.TabIndex = 0;
+            this.fio_Label.Text = "Ф.И.О. пациента:";
+            // 
+            // warning_label
+            // 
+            this.warning_label.AutoSize = true;
+            this.warning_label.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.warning_label.ForeColor = System.Drawing.Color.Red;
+            this.warning_label.Location = new System.Drawing.Point(223, 68);
+            this.warning_label.Name = "warning_label";
+            this.warning_label.Size = new System.Drawing.Size(380, 22);
+            this.warning_label.TabIndex = 4;
+            this.warning_label.Text = "ВНИМАНИЕ: сначала выберите отделение!";
             // 
             // Form_Add
             // 
@@ -433,9 +394,6 @@ namespace Project
         private System.Windows.Forms.Button save_button;
         private System.Windows.Forms.TextBox visit_textBox;
         private System.Windows.Forms.Label visit_label;
-        private System.Windows.Forms.CheckBox hospit_checkBox;
-        private System.Windows.Forms.CheckBox goldenCard_checkBox;
-        private System.Windows.Forms.CheckBox ref_checkBox;
         private System.Windows.Forms.Label warning_label;
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem создатьБазуДанныхToolStripMenuItem;

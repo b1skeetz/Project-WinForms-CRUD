@@ -51,9 +51,6 @@ namespace Project
             doc_comboBox.Text = "";
             //listOfDocs.Text = "Выберите отделение";
             others_textBox.Clear();
-            goldenCard_checkBox.Checked = false;
-            hospit_checkBox.Checked = false;
-            ref_checkBox.Checked = false;
         }
     }
 }

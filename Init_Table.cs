@@ -77,6 +77,16 @@ namespace Project
             return data;
         }
 
+        public void table_changed(ComboBox comboBox, string tableName, string database, DataGridView dataGridView)
+        {
+            comboBox.Items.Clear();
+            dataGridView.DataSource = InitTable(tableName, database);
+            autosize(dataGridView);
+            for (int i = 0; i < dataGridView.Columns.Count; i++)
+            {
+                comboBox.Items.Add(dataGridView.Columns[i].Name);
+            }
+        }
 
         public DataTable InitTable(string query, bool status)
         {
