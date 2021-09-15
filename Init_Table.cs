@@ -115,5 +115,47 @@ namespace Project
             }
             return data;
         }
+
+        public DataGridView table_get(string tableName, string database)
+        {
+            DataGridView dataGridView1 = new DataGridView();
+            dataGridView1.Columns.Clear();
+            dataGridView1.Rows.Clear();
+
+            string dbconnect = "Database=" + database + ";Data Source=localhost;User Id=root;Password=wsk2020;";
+            MySqlConnection connect = new MySqlConnection(dbconnect);
+
+            string query = "SELECT * FROM " + database + "." + tableName + ";";
+            MySqlCommand command = new MySqlCommand(query, connect);
+
+          
+            MySqlDataReader reader;
+            try
+            {
+                command.Connection.Open();
+                reader = command.ExecuteReader();
+                dataGridView1.Columns.Add("idField", "ID");
+                dataGridView1.Columns["idField"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns["idField"].Visible = false;
+                dataGridView1.Columns.Add("nameField", "Name");
+                dataGridView1.Columns["nameField"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                while (reader.Read())
+                {
+                    dataGridView1.Rows.Add(reader["doctorID"].ToString(), reader["DocName"].ToString());
+                }
+                reader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: " + ex.ToString());
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+            return dataGridView1;
+
+        }
     }
 }

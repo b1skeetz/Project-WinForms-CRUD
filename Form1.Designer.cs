@@ -187,6 +187,7 @@ namespace Project
             // 
             // clear_button
             // 
+            this.clear_button.Enabled = false;
             this.clear_button.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.clear_button.Location = new System.Drawing.Point(673, 225);
             this.clear_button.Name = "clear_button";

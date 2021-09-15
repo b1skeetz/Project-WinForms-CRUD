@@ -30,13 +30,7 @@ namespace Project
 
 
         }
-        /*switch (listOfDocs.SelectedItem.ToString())
-            {
-                case 'Гинеколог': ;
-            }*/
-
-        
-
+       
         private void поискКартыToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Search_Form search = new Search_Form();
@@ -59,27 +53,38 @@ namespace Project
                 switch (listOfDocs.SelectedIndex)
                 {
                     case 0:
+                        searchBy_textBox.Clear();
+                        searchBy_comboBox.Text = "";
                         init.table_changed(searchBy_comboBox, tablename_patients_proktolog, database, main_table);
                         break;
                     case 1:
+                        searchBy_textBox.Clear();
+                        searchBy_comboBox.Text = "";
                         init.table_changed(searchBy_comboBox, tablename_patients_ginekolog, database, main_table);
                         break;
                     case 2:
+                        searchBy_textBox.Clear();
+                        searchBy_comboBox.Text = "";
                         init.table_changed(searchBy_comboBox, tablename_patients_urolog, database, main_table);
                         break;
                     case 3:
-                        init.table_changed(searchBy_comboBox, tablename_patients_urolog, database, main_table);
-                        break;
-                    case 4:
+                        searchBy_textBox.Clear();
+                        searchBy_comboBox.Text = "";
                         init.table_changed(searchBy_comboBox, tablename_patients_mammolog, database, main_table);
                         break;
-                    case 5:
+                    case 4:
+                        searchBy_textBox.Clear();
+                        searchBy_comboBox.Text = "";
                         init.table_changed(searchBy_comboBox, tablename_patients_dermatolog, database, main_table);
                         break;
-                    case 6:
+                    case 5:
+                        searchBy_textBox.Clear();
+                        searchBy_comboBox.Text = "";
                         init.table_changed(searchBy_comboBox, tablename_patients_lor, database, main_table);
                         break;
-                    case 7:
+                    case 6:
+                        searchBy_textBox.Clear();
+                        searchBy_comboBox.Text = "";
                         init.table_changed(searchBy_comboBox, tablename_patients_nevropatolog, database, main_table);
                         break;
                     default: MessageBox.Show("Table error!");
@@ -93,7 +98,51 @@ namespace Project
             searchBy_textBox.Clear();
             searchBy_comboBox.Items.Clear();
             searchBy_comboBox.Text = "";
-            main_table.DataSource = init.InitTable(tablename_patients_ginekolog, database);
+            if (listOfDocs.Text != "Выберите отделение")
+            {
+                warning_label.Hide();
+                switch (listOfDocs.SelectedIndex)
+                {
+                    case 0:
+                        searchBy_textBox.Clear();
+                        searchBy_comboBox.Text = "";
+                        init.table_changed(searchBy_comboBox, tablename_patients_proktolog, database, main_table);
+                        break;
+                    case 1:
+                        searchBy_textBox.Clear();
+                        searchBy_comboBox.Text = "";
+                        init.table_changed(searchBy_comboBox, tablename_patients_ginekolog, database, main_table);
+                        break;
+                    case 2:
+                        searchBy_textBox.Clear();
+                        searchBy_comboBox.Text = "";
+                        init.table_changed(searchBy_comboBox, tablename_patients_urolog, database, main_table);
+                        break;
+                    case 3:
+                        searchBy_textBox.Clear();
+                        searchBy_comboBox.Text = "";
+                        init.table_changed(searchBy_comboBox, tablename_patients_mammolog, database, main_table);
+                        break;
+                    case 4:
+                        searchBy_textBox.Clear();
+                        searchBy_comboBox.Text = "";
+                        init.table_changed(searchBy_comboBox, tablename_patients_dermatolog, database, main_table);
+                        break;
+                    case 5:
+                        searchBy_textBox.Clear();
+                        searchBy_comboBox.Text = "";
+                        init.table_changed(searchBy_comboBox, tablename_patients_lor, database, main_table);
+                        break;
+                    case 6:
+                        searchBy_textBox.Clear();
+                        searchBy_comboBox.Text = "";
+                        init.table_changed(searchBy_comboBox, tablename_patients_nevropatolog, database, main_table);
+                        break;
+                    default:
+                        MessageBox.Show("Table error!");
+                        break;
+                }
+            }
             init.autosize(main_table);
             for (int i = 0; i < main_table.Columns.Count; i++)
             {
@@ -117,7 +166,23 @@ namespace Project
                 warning_label.Hide();
                 switch (listOfDocs.SelectedIndex)
                 {
+                    case 0:
+                        searchBy_comboBox.Items.Clear();
+                        main_table.DataSource = init.searchBy(tablename_patients_proktolog, database, searchBy_textBox, searchBy_comboBox);
+                        main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Card_num"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Doctors_Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Coming_Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Other"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        for (int i = 0; i < main_table.Columns.Count; i++)
+                        {
+                            searchBy_comboBox.Items.Add(main_table.Columns[i].Name);
+                        }
+                        break;
                     case 1:
+                        searchBy_comboBox.Items.Clear();
                         main_table.DataSource = init.searchBy(tablename_patients_ginekolog, database, searchBy_textBox, searchBy_comboBox);
                         main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -131,9 +196,86 @@ namespace Project
                             searchBy_comboBox.Items.Add(main_table.Columns[i].Name);
                         }
                         break;
+                    case 2:
+                        searchBy_comboBox.Items.Clear();
+                        main_table.DataSource = init.searchBy(tablename_patients_urolog, database, searchBy_textBox, searchBy_comboBox);
+                        main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Card_num"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Doctors_Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Coming_Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Other"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        for (int i = 0; i < main_table.Columns.Count; i++)
+                        {
+                            searchBy_comboBox.Items.Add(main_table.Columns[i].Name);
+                        }
+                        break;
+                    case 3:
+                        searchBy_comboBox.Items.Clear();
+                        main_table.DataSource = init.searchBy(tablename_patients_mammolog, database, searchBy_textBox, searchBy_comboBox);
+                        main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Card_num"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Doctors_Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Coming_Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Other"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        for (int i = 0; i < main_table.Columns.Count; i++)
+                        {
+                            searchBy_comboBox.Items.Add(main_table.Columns[i].Name);
+                        }
+                        break;
+                    case 4:
+                        searchBy_comboBox.Items.Clear();
+                        main_table.DataSource = init.searchBy(tablename_patients_dermatolog, database, searchBy_textBox, searchBy_comboBox);
+                        main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Card_num"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Doctors_Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Coming_Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Other"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        for (int i = 0; i < main_table.Columns.Count; i++)
+                        {
+                            searchBy_comboBox.Items.Add(main_table.Columns[i].Name);
+                        }
+                        break;
+                    case 5:
+                        searchBy_comboBox.Items.Clear();
+                        main_table.DataSource = init.searchBy(tablename_patients_lor, database, searchBy_textBox, searchBy_comboBox);
+                        main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Card_num"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Doctors_Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Coming_Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Other"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        for (int i = 0; i < main_table.Columns.Count; i++)
+                        {
+                            searchBy_comboBox.Items.Add(main_table.Columns[i].Name);
+                        }
+                        break;
+                    case 6:
+                        searchBy_comboBox.Items.Clear();
+                        main_table.DataSource = init.searchBy(tablename_patients_nevropatolog, database, searchBy_textBox, searchBy_comboBox);
+                        main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Card_num"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Doctors_Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Coming_Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        main_table.Columns["Other"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        for (int i = 0; i < main_table.Columns.Count; i++)
+                        {
+                            searchBy_comboBox.Items.Add(main_table.Columns[i].Name);
+                        }
+                        break;
+                    default:
+                        MessageBox.Show("Sorting error!");
+                        break;
                 }
 
-                
             }
         }
 
@@ -142,6 +284,19 @@ namespace Project
         private void searchBy_comboBox_TextChanged(object sender, EventArgs e)
         {
             searchBy_textBox.Enabled = true;
+            clear_button.Enabled = true;
+            if(searchBy_comboBox.Text == "")
+            {
+                searchBy_textBox.Clear();
+                clear_button.Enabled = false;
+                searchBy_textBox.Enabled = false;
+            }
+            else if(searchBy_comboBox.Text == "" && searchBy_textBox.Text != "")
+            {
+                searchBy_textBox.Clear();
+                clear_button.Enabled = false;
+                searchBy_textBox.Enabled = false;
+            }
         }
 
         private void clear_button_Click(object sender, EventArgs e)

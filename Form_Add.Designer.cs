@@ -181,7 +181,6 @@ namespace Project
             this.main_panel.Name = "main_panel";
             this.main_panel.Size = new System.Drawing.Size(721, 340);
             this.main_panel.TabIndex = 3;
-            this.main_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // visit_textBox
             // 
@@ -221,7 +220,7 @@ namespace Project
             this.save_button.Name = "save_button";
             this.save_button.Size = new System.Drawing.Size(94, 33);
             this.save_button.TabIndex = 15;
-            this.save_button.Text = "Сохранить";
+            this.save_button.Text = "Добавить";
             this.save_button.UseVisualStyleBackColor = true;
             this.save_button.Click += new System.EventHandler(this.save_button_Click);
             // 
@@ -232,7 +231,6 @@ namespace Project
             this.others_textBox.Name = "others_textBox";
             this.others_textBox.Size = new System.Drawing.Size(493, 25);
             this.others_textBox.TabIndex = 11;
-            this.others_textBox.TextChanged += new System.EventHandler(this.others_textBox_TextChanged);
             // 
             // others_label
             // 
@@ -307,7 +305,6 @@ namespace Project
             this.years_comboBox.Name = "years_comboBox";
             this.years_comboBox.Size = new System.Drawing.Size(121, 26);
             this.years_comboBox.TabIndex = 3;
-            this.years_comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // fio_textBox
             // 
