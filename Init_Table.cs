@@ -21,9 +21,34 @@ namespace Project
             table.Columns["Coming_Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             table.Columns["Other"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
-        public DataTable searchBy(string tableName, string database, TextBox text, ComboBox comboBox)
+
+        public void add_query(string database, string tablename, TextBox fio, ComboBox year, TextBox number, TextBox address, ComboBox doc, TextBox time, TextBox other, MySqlConnection connect)
         {
-            string dbconnect = "Database=" + database + ";Data Source=localhost; User Id=root; Password=wsk2020;";
+            try
+            {
+                string query = "INSERT INTO " + database + "." + tablename + "(PatName, Born_year, Card_num, Address, Doctors_Name, Coming_Date, Other) VALUES ('" + fio.Text + "', '" + year.Text +
+                "', '" + number.Text + "', '" + address.Text + "', '" + doc.Text + "', '" + time.Text + "', '" + other.Text + "');";
+       
+
+                MySqlCommand command = new MySqlCommand(query, connect);
+                connect.Open();
+                //command.Connection.Open();
+                command.ExecuteNonQuery();
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+            finally
+            {
+                connect.Close();
+            }
+        }
+
+        public DataTable searchBy(string tableName, string database, TextBox text, ComboBox comboBox, string password)
+        {
+            string dbconnect = "Database=" + database + ";Data Source=localhost; User Id=root; Password=" + password + ";";
             MySqlConnection connect = new MySqlConnection(dbconnect);
 
             string query = "SELECT * FROM " + database + "." + tableName + " WHERE " + comboBox.Text + " LIKE '%" + text.Text + "%';";
@@ -38,7 +63,7 @@ namespace Project
                 data.Load(reader);
                 reader.Close();
             }
-            catch(MySqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show("Error: " + ex);
             }
@@ -49,12 +74,12 @@ namespace Project
             return data;
         }
 
-        public DataTable InitTable(string tableName, string database)
+        public DataTable InitTable(string tableName, string database, string password)
         {
-            string dbconnect = "Database=" + database + ";Data Source=localhost;User Id=root;Password=wsk2020;";
+            string dbconnect = "Database=" + database + ";Data Source=localhost;User Id=root;Password=" + password + ";";
             MySqlConnection connect = new MySqlConnection(dbconnect);
 
-            string query = "SELECT * FROM "+ database + "." + tableName + ";";
+            string query = "SELECT * FROM " + database + "." + tableName + ";";
             MySqlCommand command = new MySqlCommand(query, connect);
             DataTable data = new DataTable();
 
@@ -77,10 +102,10 @@ namespace Project
             return data;
         }
 
-        public void table_changed(ComboBox comboBox, string tableName, string database, DataGridView dataGridView)
+        public void table_changed(ComboBox comboBox, string tableName, string database, DataGridView dataGridView, string password)
         {
             comboBox.Items.Clear();
-            dataGridView.DataSource = InitTable(tableName, database);
+            dataGridView.DataSource = InitTable(tableName, database, password);
             autosize(dataGridView);
             for (int i = 0; i < dataGridView.Columns.Count; i++)
             {
@@ -116,19 +141,19 @@ namespace Project
             return data;
         }
 
-        public DataGridView table_get(string tableName, string database)
+        public DataGridView table_get(string tableName, string database, string password)
         {
             DataGridView dataGridView1 = new DataGridView();
             dataGridView1.Columns.Clear();
             dataGridView1.Rows.Clear();
 
-            string dbconnect = "Database=" + database + ";Data Source=localhost;User Id=root;Password=wsk2020;";
+            string dbconnect = "Database=" + database + ";Data Source=localhost;User Id=root;Password=" + password + ";";
             MySqlConnection connect = new MySqlConnection(dbconnect);
 
             string query = "SELECT * FROM " + database + "." + tableName + ";";
             MySqlCommand command = new MySqlCommand(query, connect);
 
-          
+
             MySqlDataReader reader;
             try
             {

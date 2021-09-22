@@ -22,6 +22,7 @@ namespace Project
         string tablename_patients_mammolog = "patients_mammolog";
         string tablename_patients_lor = "patients_lor";
         string tablename_patients_nevropatolog = "patients_nevropatolog";
+        string password = "wsk2020";
 
         string database = "clinic";
         public Form1()
@@ -55,37 +56,37 @@ namespace Project
                     case 0:
                         searchBy_textBox.Clear();
                         searchBy_comboBox.Text = "";
-                        init.table_changed(searchBy_comboBox, tablename_patients_proktolog, database, main_table);
+                        init.table_changed(searchBy_comboBox, tablename_patients_proktolog, database, main_table, password);
                         break;
                     case 1:
                         searchBy_textBox.Clear();
                         searchBy_comboBox.Text = "";
-                        init.table_changed(searchBy_comboBox, tablename_patients_ginekolog, database, main_table);
+                        init.table_changed(searchBy_comboBox, tablename_patients_ginekolog, database, main_table, password);
                         break;
                     case 2:
                         searchBy_textBox.Clear();
                         searchBy_comboBox.Text = "";
-                        init.table_changed(searchBy_comboBox, tablename_patients_urolog, database, main_table);
+                        init.table_changed(searchBy_comboBox, tablename_patients_urolog, database, main_table, password);
                         break;
                     case 3:
                         searchBy_textBox.Clear();
                         searchBy_comboBox.Text = "";
-                        init.table_changed(searchBy_comboBox, tablename_patients_mammolog, database, main_table);
+                        init.table_changed(searchBy_comboBox, tablename_patients_mammolog, database, main_table, password);
                         break;
                     case 4:
                         searchBy_textBox.Clear();
                         searchBy_comboBox.Text = "";
-                        init.table_changed(searchBy_comboBox, tablename_patients_dermatolog, database, main_table);
+                        init.table_changed(searchBy_comboBox, tablename_patients_dermatolog, database, main_table, password);
                         break;
                     case 5:
                         searchBy_textBox.Clear();
                         searchBy_comboBox.Text = "";
-                        init.table_changed(searchBy_comboBox, tablename_patients_lor, database, main_table);
+                        init.table_changed(searchBy_comboBox, tablename_patients_lor, database, main_table, password);
                         break;
                     case 6:
                         searchBy_textBox.Clear();
                         searchBy_comboBox.Text = "";
-                        init.table_changed(searchBy_comboBox, tablename_patients_nevropatolog, database, main_table);
+                        init.table_changed(searchBy_comboBox, tablename_patients_nevropatolog, database, main_table, password);
                         break;
                     default: MessageBox.Show("Table error!");
                         break;
@@ -106,37 +107,37 @@ namespace Project
                     case 0:
                         searchBy_textBox.Clear();
                         searchBy_comboBox.Text = "";
-                        init.table_changed(searchBy_comboBox, tablename_patients_proktolog, database, main_table);
+                        init.table_changed(searchBy_comboBox, tablename_patients_proktolog, database, main_table, password);
                         break;
                     case 1:
                         searchBy_textBox.Clear();
                         searchBy_comboBox.Text = "";
-                        init.table_changed(searchBy_comboBox, tablename_patients_ginekolog, database, main_table);
+                        init.table_changed(searchBy_comboBox, tablename_patients_ginekolog, database, main_table, password);
                         break;
                     case 2:
                         searchBy_textBox.Clear();
                         searchBy_comboBox.Text = "";
-                        init.table_changed(searchBy_comboBox, tablename_patients_urolog, database, main_table);
+                        init.table_changed(searchBy_comboBox, tablename_patients_urolog, database, main_table, password);
                         break;
                     case 3:
                         searchBy_textBox.Clear();
                         searchBy_comboBox.Text = "";
-                        init.table_changed(searchBy_comboBox, tablename_patients_mammolog, database, main_table);
+                        init.table_changed(searchBy_comboBox, tablename_patients_mammolog, database, main_table, password);
                         break;
                     case 4:
                         searchBy_textBox.Clear();
                         searchBy_comboBox.Text = "";
-                        init.table_changed(searchBy_comboBox, tablename_patients_dermatolog, database, main_table);
+                        init.table_changed(searchBy_comboBox, tablename_patients_dermatolog, database, main_table, password);
                         break;
                     case 5:
                         searchBy_textBox.Clear();
                         searchBy_comboBox.Text = "";
-                        init.table_changed(searchBy_comboBox, tablename_patients_lor, database, main_table);
+                        init.table_changed(searchBy_comboBox, tablename_patients_lor, database, main_table, password);
                         break;
                     case 6:
                         searchBy_textBox.Clear();
                         searchBy_comboBox.Text = "";
-                        init.table_changed(searchBy_comboBox, tablename_patients_nevropatolog, database, main_table);
+                        init.table_changed(searchBy_comboBox, tablename_patients_nevropatolog, database, main_table, password);
                         break;
                     default:
                         MessageBox.Show("Table error!");
@@ -168,7 +169,7 @@ namespace Project
                 {
                     case 0:
                         searchBy_comboBox.Items.Clear();
-                        main_table.DataSource = init.searchBy(tablename_patients_proktolog, database, searchBy_textBox, searchBy_comboBox);
+                        main_table.DataSource = init.searchBy(tablename_patients_proktolog, database, searchBy_textBox, searchBy_comboBox, password);
                         main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -183,7 +184,7 @@ namespace Project
                         break;
                     case 1:
                         searchBy_comboBox.Items.Clear();
-                        main_table.DataSource = init.searchBy(tablename_patients_ginekolog, database, searchBy_textBox, searchBy_comboBox);
+                        main_table.DataSource = init.searchBy(tablename_patients_ginekolog, database, searchBy_textBox, searchBy_comboBox, password);
                         main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -198,7 +199,7 @@ namespace Project
                         break;
                     case 2:
                         searchBy_comboBox.Items.Clear();
-                        main_table.DataSource = init.searchBy(tablename_patients_urolog, database, searchBy_textBox, searchBy_comboBox);
+                        main_table.DataSource = init.searchBy(tablename_patients_urolog, database, searchBy_textBox, searchBy_comboBox, password);
                         main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -213,7 +214,7 @@ namespace Project
                         break;
                     case 3:
                         searchBy_comboBox.Items.Clear();
-                        main_table.DataSource = init.searchBy(tablename_patients_mammolog, database, searchBy_textBox, searchBy_comboBox);
+                        main_table.DataSource = init.searchBy(tablename_patients_mammolog, database, searchBy_textBox, searchBy_comboBox, password);
                         main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -228,7 +229,7 @@ namespace Project
                         break;
                     case 4:
                         searchBy_comboBox.Items.Clear();
-                        main_table.DataSource = init.searchBy(tablename_patients_dermatolog, database, searchBy_textBox, searchBy_comboBox);
+                        main_table.DataSource = init.searchBy(tablename_patients_dermatolog, database, searchBy_textBox, searchBy_comboBox, password);
                         main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -243,7 +244,7 @@ namespace Project
                         break;
                     case 5:
                         searchBy_comboBox.Items.Clear();
-                        main_table.DataSource = init.searchBy(tablename_patients_lor, database, searchBy_textBox, searchBy_comboBox);
+                        main_table.DataSource = init.searchBy(tablename_patients_lor, database, searchBy_textBox, searchBy_comboBox, password);
                         main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -258,7 +259,7 @@ namespace Project
                         break;
                     case 6:
                         searchBy_comboBox.Items.Clear();
-                        main_table.DataSource = init.searchBy(tablename_patients_nevropatolog, database, searchBy_textBox, searchBy_comboBox);
+                        main_table.DataSource = init.searchBy(tablename_patients_nevropatolog, database, searchBy_textBox, searchBy_comboBox, password);
                         main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -304,7 +305,7 @@ namespace Project
             searchBy_textBox.Clear();
             searchBy_comboBox.Items.Clear();
             searchBy_comboBox.Text = "";
-            main_table.DataSource = init.InitTable(tablename_patients_ginekolog, database);
+            main_table.DataSource = init.InitTable(tablename_patients_ginekolog, database, password);
             init.autosize(main_table);
             for (int i = 0; i < main_table.Columns.Count; i++)
             {

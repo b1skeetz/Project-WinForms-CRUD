@@ -49,6 +49,7 @@ namespace Project
             years_comboBox.Text = "";
             number_textBox.Clear();
             doc_comboBox.Text = "";
+            doc_comboBox.Items.Clear();
             //listOfDocs.Text = "Выберите отделение";
             others_textBox.Clear();
         }
