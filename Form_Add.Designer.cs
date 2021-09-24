@@ -36,10 +36,6 @@ namespace Project
             this.отменаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reference = new System.Windows.Forms.ToolStripMenuItem();
             this.listOfDocs = new System.Windows.Forms.ToolStripComboBox();
-            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьБазуДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьТаблицуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьТаблицуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.main_panel = new System.Windows.Forms.Panel();
             this.visit_textBox = new System.Windows.Forms.TextBox();
             this.visit_label = new System.Windows.Forms.Label();
@@ -69,8 +65,7 @@ namespace Project
             this.control_panel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dataBaseMenu,
             this.reference,
-            this.listOfDocs,
-            this.настройкиToolStripMenuItem});
+            this.listOfDocs});
             this.control_panel.Location = new System.Drawing.Point(0, 0);
             this.control_panel.Name = "control_panel";
             this.control_panel.Size = new System.Drawing.Size(800, 31);
@@ -130,34 +125,6 @@ namespace Project
             this.listOfDocs.Size = new System.Drawing.Size(250, 27);
             this.listOfDocs.Text = "Выберите отделение";
             this.listOfDocs.TextChanged += new System.EventHandler(this.listOfDocs_TextChanged);
-            // 
-            // настройкиToolStripMenuItem
-            // 
-            this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.создатьБазуДанныхToolStripMenuItem,
-            this.создатьТаблицуToolStripMenuItem,
-            this.удалитьТаблицуToolStripMenuItem});
-            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(102, 27);
-            this.настройкиToolStripMenuItem.Text = "Настройки";
-            // 
-            // создатьБазуДанныхToolStripMenuItem
-            // 
-            this.создатьБазуДанныхToolStripMenuItem.Name = "создатьБазуДанныхToolStripMenuItem";
-            this.создатьБазуДанныхToolStripMenuItem.Size = new System.Drawing.Size(249, 24);
-            this.создатьБазуДанныхToolStripMenuItem.Text = "Создать базу данных";
-            // 
-            // создатьТаблицуToolStripMenuItem
-            // 
-            this.создатьТаблицуToolStripMenuItem.Name = "создатьТаблицуToolStripMenuItem";
-            this.создатьТаблицуToolStripMenuItem.Size = new System.Drawing.Size(249, 24);
-            this.создатьТаблицуToolStripMenuItem.Text = "Создать таблицу";
-            // 
-            // удалитьТаблицуToolStripMenuItem
-            // 
-            this.удалитьТаблицуToolStripMenuItem.Name = "удалитьТаблицуToolStripMenuItem";
-            this.удалитьТаблицуToolStripMenuItem.Size = new System.Drawing.Size(249, 24);
-            this.удалитьТаблицуToolStripMenuItem.Text = "Удалить таблицу";
             // 
             // main_panel
             // 
@@ -393,9 +360,5 @@ namespace Project
         private System.Windows.Forms.TextBox visit_textBox;
         private System.Windows.Forms.Label visit_label;
         private System.Windows.Forms.Label warning_label;
-        private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem создатьБазуДанныхToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem создатьТаблицуToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem удалитьТаблицуToolStripMenuItem;
     }
 }

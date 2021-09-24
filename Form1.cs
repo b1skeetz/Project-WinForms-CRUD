@@ -312,5 +312,10 @@ namespace Project
                 searchBy_comboBox.Items.Add(main_table.Columns[i].Name);
             }
         }
+
+        private void listOfDocs_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

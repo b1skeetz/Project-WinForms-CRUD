@@ -122,6 +122,7 @@ namespace Project
             this.listOfDocs.Name = "listOfDocs";
             this.listOfDocs.Size = new System.Drawing.Size(250, 27);
             this.listOfDocs.Text = "Выберите отделение";
+            this.listOfDocs.Click += new System.EventHandler(this.listOfDocs_Click);
             this.listOfDocs.TextChanged += new System.EventHandler(this.listOfDocs_TextChanged);
             // 
             // warning_label

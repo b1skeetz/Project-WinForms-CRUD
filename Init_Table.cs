@@ -28,7 +28,7 @@ namespace Project
             {
                 string query = "INSERT INTO " + database + "." + tablename + "(PatName, Born_year, Card_num, Address, Doctors_Name, Coming_Date, Other) VALUES ('" + fio.Text + "', '" + year.Text +
                 "', '" + number.Text + "', '" + address.Text + "', '" + doc.Text + "', '" + time.Text + "', '" + other.Text + "');";
-       
+
 
                 MySqlCommand command = new MySqlCommand(query, connect);
                 connect.Open();
@@ -74,6 +74,167 @@ namespace Project
             return data;
         }
 
+        public DataTable searchBy(string tableName, string database, TextBox text, ComboBox comboBox, string password, RadioButton r1, RadioButton r2, RadioButton r3, RadioButton r4, RadioButton r5, RadioButton r6)
+        {
+            string dbconnect = "Database=" + database + ";Data Source=localhost; User Id=root; Password=" + password + ";";
+            MySqlConnection connect = new MySqlConnection(dbconnect);
+
+            switch (comboBox.SelectedIndex)
+            {
+                case 1:
+                    {
+                        string query = "SELECT * FROM " + database + "." + tableName + " WHERE " + r1.Name + " LIKE '%" + text.Text + "%';";
+                        MySqlCommand command = new MySqlCommand(query, connect);
+                        DataTable data = new DataTable();
+
+                        MySqlDataReader reader;
+                        try
+                        {
+                            command.Connection.Open();
+                            reader = command.ExecuteReader();
+                            data.Load(reader);
+                            reader.Close();
+                        }
+                        catch (MySqlException ex)
+                        {
+                            MessageBox.Show("Error: " + ex);
+                        }
+                        finally
+                        {
+                            command.Connection.Close();
+                        }
+                        return data;
+                    }
+                case 2:
+                    {
+                        string query = "SELECT * FROM " + database + "." + tableName + " WHERE " + r2.Name + " LIKE '%" + text.Text + "%';";
+                        MySqlCommand command = new MySqlCommand(query, connect);
+                        DataTable data = new DataTable();
+
+                        MySqlDataReader reader;
+                        try
+                        {
+                            command.Connection.Open();
+                            reader = command.ExecuteReader();
+                            data.Load(reader);
+                            reader.Close();
+                        }
+                        catch (MySqlException ex)
+                        {
+                            MessageBox.Show("Error: " + ex);
+                        }
+                        finally
+                        {
+                            command.Connection.Close();
+                        }
+                        return data;
+                    }
+                case 3:
+                    {
+                        string query = "SELECT * FROM " + database + "." + tableName + " WHERE " + r3.Name + " LIKE '%" + text.Text + "%';";
+                        MySqlCommand command = new MySqlCommand(query, connect);
+                        DataTable data = new DataTable();
+
+                        MySqlDataReader reader;
+                        try
+                        {
+                            command.Connection.Open();
+                            reader = command.ExecuteReader();
+                            data.Load(reader);
+                            reader.Close();
+                        }
+                        catch (MySqlException ex)
+                        {
+                            MessageBox.Show("Error: " + ex);
+                        }
+                        finally
+                        {
+                            command.Connection.Close();
+                        }
+                        return data;
+                    }
+                case 4:
+                    {
+                        string query = "SELECT * FROM " + database + "." + tableName + " WHERE " + r4.Name + " LIKE '%" + text.Text + "%';";
+                        MySqlCommand command = new MySqlCommand(query, connect);
+                        DataTable data = new DataTable();
+
+                        MySqlDataReader reader;
+                        try
+                        {
+                            command.Connection.Open();
+                            reader = command.ExecuteReader();
+                            data.Load(reader);
+                            reader.Close();
+                        }
+                        catch (MySqlException ex)
+                        {
+                            MessageBox.Show("Error: " + ex);
+                        }
+                        finally
+                        {
+                            command.Connection.Close();
+                        }
+                        return data;
+                    }
+                case 5:
+                    {
+                        string query = "SELECT * FROM " + database + "." + tableName + " WHERE " + r5.Name + " LIKE '%" + text.Text + "%';";
+                        MySqlCommand command = new MySqlCommand(query, connect);
+                        DataTable data = new DataTable();
+
+                        MySqlDataReader reader;
+                        try
+                        {
+                            command.Connection.Open();
+                            reader = command.ExecuteReader();
+                            data.Load(reader);
+                            reader.Close();
+                        }
+                        catch (MySqlException ex)
+                        {
+                            MessageBox.Show("Error: " + ex);
+                        }
+                        finally
+                        {
+                            command.Connection.Close();
+                        }
+                        return data;
+                    }
+                case 6:
+                    {
+                        string query = "SELECT * FROM " + database + "." + tableName + " WHERE " + r6.Name + " LIKE '%" + text.Text + "%';";
+                        MySqlCommand command = new MySqlCommand(query, connect);
+                        DataTable data = new DataTable();
+
+                        MySqlDataReader reader;
+                        try
+                        {
+                            command.Connection.Open();
+                            reader = command.ExecuteReader();
+                            data.Load(reader);
+                            reader.Close();
+                        }
+                        catch (MySqlException ex)
+                        {
+                            MessageBox.Show("Error: " + ex);
+                        }
+                        finally
+                        {
+                            command.Connection.Close();
+                        }
+                        return data;
+                    }
+                default:
+                    DataTable data_buf = new DataTable();
+                    return data_buf;
+            }
+
+
+        }
+
+
+
         public DataTable InitTable(string tableName, string database, string password)
         {
             string dbconnect = "Database=" + database + ";Data Source=localhost;User Id=root;Password=" + password + ";";
@@ -111,6 +272,12 @@ namespace Project
             {
                 comboBox.Items.Add(dataGridView.Columns[i].Name);
             }
+        }
+
+        public void table_changed(string tableName, string database, DataGridView dataGridView, string password)
+        {
+            dataGridView.DataSource = InitTable(tableName, database, password);
+            autosize(dataGridView);
         }
 
         public DataTable InitTable(string query, bool status)
