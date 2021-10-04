@@ -1,7 +1,7 @@
 ﻿
 namespace Project
 {
-    partial class Form_Add
+    partial class Form_Edit
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,12 @@ namespace Project
         /// </summary>
         private void InitializeComponent()
         {
-            this.control_panel = new System.Windows.Forms.MenuStrip();
-            this.dataBaseMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.отменаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reference = new System.Windows.Forms.ToolStripMenuItem();
-            this.посмотретьСправкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listOfDocs = new System.Windows.Forms.ToolStripComboBox();
-            this.main_panel = new System.Windows.Forms.Panel();
             this.visit_textBox = new System.Windows.Forms.TextBox();
             this.visit_label = new System.Windows.Forms.Label();
             this.clear_button = new System.Windows.Forms.Button();
             this.save_button = new System.Windows.Forms.Button();
             this.others_textBox = new System.Windows.Forms.TextBox();
+            this.main_panel = new System.Windows.Forms.Panel();
             this.others_label = new System.Windows.Forms.Label();
             this.doc_comboBox = new System.Windows.Forms.ComboBox();
             this.doc_label = new System.Windows.Forms.Label();
@@ -53,83 +46,68 @@ namespace Project
             this.fio_textBox = new System.Windows.Forms.TextBox();
             this.born_Label = new System.Windows.Forms.Label();
             this.fio_Label = new System.Windows.Forms.Label();
-            this.warning_label = new System.Windows.Forms.Label();
-            this.control_panel.SuspendLayout();
+            this.reference = new System.Windows.Forms.ToolStripMenuItem();
+            this.посмотретьСправкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataBaseMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отменаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.control_panel = new System.Windows.Forms.MenuStrip();
+            this.return_button = new System.Windows.Forms.Button();
             this.main_panel.SuspendLayout();
+            this.control_panel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // control_panel
+            // visit_textBox
             // 
-            this.control_panel.BackColor = System.Drawing.Color.NavajoWhite;
-            this.control_panel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.control_panel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dataBaseMenu,
-            this.reference,
-            this.listOfDocs});
-            this.control_panel.Location = new System.Drawing.Point(0, 0);
-            this.control_panel.Name = "control_panel";
-            this.control_panel.Size = new System.Drawing.Size(800, 31);
-            this.control_panel.TabIndex = 2;
-            this.control_panel.Text = "menuStrip1";
+            this.visit_textBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.visit_textBox.Location = new System.Drawing.Point(182, 149);
+            this.visit_textBox.Name = "visit_textBox";
+            this.visit_textBox.Size = new System.Drawing.Size(493, 25);
+            this.visit_textBox.TabIndex = 18;
             // 
-            // dataBaseMenu
+            // visit_label
             // 
-            this.dataBaseMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сохранитьToolStripMenuItem,
-            this.отменаToolStripMenuItem});
-            this.dataBaseMenu.Name = "dataBaseMenu";
-            this.dataBaseMenu.Size = new System.Drawing.Size(57, 27);
-            this.dataBaseMenu.Text = "База";
+            this.visit_label.AutoSize = true;
+            this.visit_label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.visit_label.Location = new System.Drawing.Point(31, 149);
+            this.visit_label.Name = "visit_label";
+            this.visit_label.Size = new System.Drawing.Size(104, 18);
+            this.visit_label.TabIndex = 17;
+            this.visit_label.Text = "Дата прихода";
             // 
-            // сохранитьToolStripMenuItem
+            // clear_button
             // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить";
-            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
+            this.clear_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.clear_button.Location = new System.Drawing.Point(310, 244);
+            this.clear_button.Name = "clear_button";
+            this.clear_button.Size = new System.Drawing.Size(94, 33);
+            this.clear_button.TabIndex = 16;
+            this.clear_button.Text = "Очистить";
+            this.clear_button.UseVisualStyleBackColor = true;
+            this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
             // 
-            // отменаToolStripMenuItem
+            // save_button
             // 
-            this.отменаToolStripMenuItem.Name = "отменаToolStripMenuItem";
-            this.отменаToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
-            this.отменаToolStripMenuItem.Text = "Отмена";
-            this.отменаToolStripMenuItem.Click += new System.EventHandler(this.отменаToolStripMenuItem_Click);
+            this.save_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.save_button.Location = new System.Drawing.Point(182, 244);
+            this.save_button.Name = "save_button";
+            this.save_button.Size = new System.Drawing.Size(94, 33);
+            this.save_button.TabIndex = 15;
+            this.save_button.Text = "Добавить";
+            this.save_button.UseVisualStyleBackColor = true;
+            this.save_button.Click += new System.EventHandler(this.save_button_Click);
             // 
-            // reference
+            // others_textBox
             // 
-            this.reference.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.посмотретьСправкуToolStripMenuItem});
-            this.reference.Name = "reference";
-            this.reference.Size = new System.Drawing.Size(84, 27);
-            this.reference.Text = "Справка";
-            // 
-            // посмотретьСправкуToolStripMenuItem
-            // 
-            this.посмотретьСправкуToolStripMenuItem.Name = "посмотретьСправкуToolStripMenuItem";
-            this.посмотретьСправкуToolStripMenuItem.Size = new System.Drawing.Size(240, 24);
-            this.посмотретьСправкуToolStripMenuItem.Text = "Посмотреть справку";
-            this.посмотретьСправкуToolStripMenuItem.Click += new System.EventHandler(this.посмотретьСправкуToolStripMenuItem_Click);
-            // 
-            // listOfDocs
-            // 
-            this.listOfDocs.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.listOfDocs.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.listOfDocs.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listOfDocs.Items.AddRange(new object[] {
-            "Проктолог",
-            "Гинеколог",
-            "Уролог",
-            "Маммолог",
-            "Дерматолог",
-            "Отоларинголог ",
-            "Невропатолог "});
-            this.listOfDocs.Name = "listOfDocs";
-            this.listOfDocs.Size = new System.Drawing.Size(250, 27);
-            this.listOfDocs.Text = "Выберите отделение";
-            this.listOfDocs.TextChanged += new System.EventHandler(this.listOfDocs_TextChanged);
+            this.others_textBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.others_textBox.Location = new System.Drawing.Point(182, 180);
+            this.others_textBox.Name = "others_textBox";
+            this.others_textBox.Size = new System.Drawing.Size(493, 25);
+            this.others_textBox.TabIndex = 11;
             // 
             // main_panel
             // 
+            this.main_panel.Controls.Add(this.return_button);
             this.main_panel.Controls.Add(this.visit_textBox);
             this.main_panel.Controls.Add(this.visit_label);
             this.main_panel.Controls.Add(this.clear_button);
@@ -146,62 +124,10 @@ namespace Project
             this.main_panel.Controls.Add(this.fio_textBox);
             this.main_panel.Controls.Add(this.born_Label);
             this.main_panel.Controls.Add(this.fio_Label);
-            this.main_panel.Enabled = false;
-            this.main_panel.Location = new System.Drawing.Point(38, 83);
+            this.main_panel.Location = new System.Drawing.Point(38, 97);
             this.main_panel.Name = "main_panel";
             this.main_panel.Size = new System.Drawing.Size(721, 340);
-            this.main_panel.TabIndex = 3;
-            this.main_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.main_panel_Paint);
-            // 
-            // visit_textBox
-            // 
-            this.visit_textBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.visit_textBox.Location = new System.Drawing.Point(182, 149);
-            this.visit_textBox.Name = "visit_textBox";
-            this.visit_textBox.Size = new System.Drawing.Size(493, 25);
-            this.visit_textBox.TabIndex = 18;
-            this.visit_textBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // visit_label
-            // 
-            this.visit_label.AutoSize = true;
-            this.visit_label.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.visit_label.Location = new System.Drawing.Point(31, 149);
-            this.visit_label.Name = "visit_label";
-            this.visit_label.Size = new System.Drawing.Size(104, 18);
-            this.visit_label.TabIndex = 17;
-            this.visit_label.Text = "Дата прихода";
-            this.visit_label.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // clear_button
-            // 
-            this.clear_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clear_button.Location = new System.Drawing.Point(392, 244);
-            this.clear_button.Name = "clear_button";
-            this.clear_button.Size = new System.Drawing.Size(94, 33);
-            this.clear_button.TabIndex = 16;
-            this.clear_button.Text = "Очистить";
-            this.clear_button.UseVisualStyleBackColor = true;
-            this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
-            // 
-            // save_button
-            // 
-            this.save_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.save_button.Location = new System.Drawing.Point(264, 244);
-            this.save_button.Name = "save_button";
-            this.save_button.Size = new System.Drawing.Size(94, 33);
-            this.save_button.TabIndex = 15;
-            this.save_button.Text = "Добавить";
-            this.save_button.UseVisualStyleBackColor = true;
-            this.save_button.Click += new System.EventHandler(this.save_button_Click);
-            // 
-            // others_textBox
-            // 
-            this.others_textBox.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.others_textBox.Location = new System.Drawing.Point(182, 180);
-            this.others_textBox.Name = "others_textBox";
-            this.others_textBox.Size = new System.Drawing.Size(493, 25);
-            this.others_textBox.TabIndex = 11;
+            this.main_panel.TabIndex = 6;
             // 
             // others_label
             // 
@@ -305,66 +231,111 @@ namespace Project
             this.fio_Label.TabIndex = 0;
             this.fio_Label.Text = "Ф.И.О. пациента:";
             // 
-            // warning_label
+            // reference
             // 
-            this.warning_label.AutoSize = true;
-            this.warning_label.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.warning_label.ForeColor = System.Drawing.Color.Red;
-            this.warning_label.Location = new System.Drawing.Point(223, 68);
-            this.warning_label.Name = "warning_label";
-            this.warning_label.Size = new System.Drawing.Size(380, 22);
-            this.warning_label.TabIndex = 4;
-            this.warning_label.Text = "ВНИМАНИЕ: сначала выберите отделение!";
-            this.warning_label.Click += new System.EventHandler(this.warning_label_Click);
+            this.reference.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.посмотретьСправкуToolStripMenuItem});
+            this.reference.Name = "reference";
+            this.reference.Size = new System.Drawing.Size(84, 23);
+            this.reference.Text = "Справка";
             // 
-            // Form_Add
+            // посмотретьСправкуToolStripMenuItem
+            // 
+            this.посмотретьСправкуToolStripMenuItem.Name = "посмотретьСправкуToolStripMenuItem";
+            this.посмотретьСправкуToolStripMenuItem.Size = new System.Drawing.Size(240, 24);
+            this.посмотретьСправкуToolStripMenuItem.Text = "Посмотреть справку";
+            this.посмотретьСправкуToolStripMenuItem.Click += new System.EventHandler(this.посмотретьСправкуToolStripMenuItem_Click);
+            // 
+            // dataBaseMenu
+            // 
+            this.dataBaseMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.сохранитьToolStripMenuItem,
+            this.отменаToolStripMenuItem});
+            this.dataBaseMenu.Name = "dataBaseMenu";
+            this.dataBaseMenu.Size = new System.Drawing.Size(57, 23);
+            this.dataBaseMenu.Text = "База";
+            // 
+            // сохранитьToolStripMenuItem
+            // 
+            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
+            this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
+            // 
+            // отменаToolStripMenuItem
+            // 
+            this.отменаToolStripMenuItem.Name = "отменаToolStripMenuItem";
+            this.отменаToolStripMenuItem.Size = new System.Drawing.Size(159, 24);
+            this.отменаToolStripMenuItem.Text = "Отмена";
+            this.отменаToolStripMenuItem.Click += new System.EventHandler(this.отменаToolStripMenuItem_Click);
+            // 
+            // control_panel
+            // 
+            this.control_panel.BackColor = System.Drawing.Color.NavajoWhite;
+            this.control_panel.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.control_panel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dataBaseMenu,
+            this.reference});
+            this.control_panel.Location = new System.Drawing.Point(0, 0);
+            this.control_panel.Name = "control_panel";
+            this.control_panel.Size = new System.Drawing.Size(800, 27);
+            this.control_panel.TabIndex = 5;
+            this.control_panel.Text = "menuStrip1";
+            // 
+            // return_button
+            // 
+            this.return_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.return_button.Location = new System.Drawing.Point(437, 244);
+            this.return_button.Name = "return_button";
+            this.return_button.Size = new System.Drawing.Size(94, 33);
+            this.return_button.TabIndex = 19;
+            this.return_button.Text = "Вернуть";
+            this.return_button.UseVisualStyleBackColor = true;
+            this.return_button.Click += new System.EventHandler(this.return_button_Click);
+            // 
+            // Form_Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.warning_label);
             this.Controls.Add(this.main_panel);
             this.Controls.Add(this.control_panel);
-            this.MaximizeBox = false;
-            this.Name = "Form_Add";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Добавление";
-            this.Load += new System.EventHandler(this.Form_Add_Load);
-            this.control_panel.ResumeLayout(false);
-            this.control_panel.PerformLayout();
+            this.Name = "Form_Edit";
+            this.Text = "Редактирование";
+            this.Load += new System.EventHandler(this.Form_Edit_Load);
             this.main_panel.ResumeLayout(false);
             this.main_panel.PerformLayout();
+            this.control_panel.ResumeLayout(false);
+            this.control_panel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip control_panel;
-        private System.Windows.Forms.ToolStripMenuItem dataBaseMenu;
-        private System.Windows.Forms.ToolStripMenuItem reference;
-        private System.Windows.Forms.ToolStripComboBox listOfDocs;
-        private System.Windows.Forms.ToolStripMenuItem отменаToolStripMenuItem;
-        private System.Windows.Forms.Panel main_panel;
-        private System.Windows.Forms.Label fio_Label;
-        private System.Windows.Forms.ComboBox years_comboBox;
-        private System.Windows.Forms.TextBox fio_textBox;
-        private System.Windows.Forms.Label born_Label;
-        private System.Windows.Forms.Label number_label;
-        private System.Windows.Forms.TextBox address_textBox;
-        private System.Windows.Forms.Label address_label;
-        private System.Windows.Forms.TextBox number_textBox;
+        private System.Windows.Forms.TextBox visit_textBox;
+        private System.Windows.Forms.Label visit_label;
+        private System.Windows.Forms.Button clear_button;
+        private System.Windows.Forms.Button save_button;
         private System.Windows.Forms.TextBox others_textBox;
+        private System.Windows.Forms.Panel main_panel;
         private System.Windows.Forms.Label others_label;
         private System.Windows.Forms.ComboBox doc_comboBox;
         private System.Windows.Forms.Label doc_label;
+        private System.Windows.Forms.TextBox number_textBox;
+        private System.Windows.Forms.Label number_label;
+        private System.Windows.Forms.TextBox address_textBox;
+        private System.Windows.Forms.Label address_label;
+        private System.Windows.Forms.ComboBox years_comboBox;
+        private System.Windows.Forms.TextBox fio_textBox;
+        private System.Windows.Forms.Label born_Label;
+        private System.Windows.Forms.Label fio_Label;
+        private System.Windows.Forms.ToolStripMenuItem reference;
+        private System.Windows.Forms.ToolStripMenuItem dataBaseMenu;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
-        private System.Windows.Forms.Button clear_button;
-        private System.Windows.Forms.Button save_button;
-        private System.Windows.Forms.TextBox visit_textBox;
-        private System.Windows.Forms.Label visit_label;
-        private System.Windows.Forms.Label warning_label;
+        private System.Windows.Forms.ToolStripMenuItem отменаToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip control_panel;
         private System.Windows.Forms.ToolStripMenuItem посмотретьСправкуToolStripMenuItem;
+        private System.Windows.Forms.Button return_button;
     }
 }

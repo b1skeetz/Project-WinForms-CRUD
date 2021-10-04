@@ -13,13 +13,13 @@ namespace Project
     {
         public void autosize(DataGridView table)
         {
-            table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            table.Columns["patientID"].Width = 60;
             table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            table.Columns["Card_num"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            table.Columns["Born_year"].Width = 65;
+            table.Columns["Card_num"].Width = 100;
             table.Columns["Doctors_Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            table.Columns["Coming_Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            table.Columns["Other"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            table.Columns["Coming_Date"].Width = 100;
+            table.Columns["Other"].Width = 80;
         }
 
         public void add_query(string database, string tablename, TextBox fio, ComboBox year, TextBox number, TextBox address, ComboBox doc, TextBox time, TextBox other, MySqlConnection connect)
@@ -45,6 +45,58 @@ namespace Project
                 connect.Close();
             }
         }
+
+        public void delete_by_index(string database, string table_name ,string password, string num, DataGridView table)
+        {
+            string dbconnection = "Database=" + database + ";Data Source=localhost; User Id=root; Password=" + password + ";"; ;
+            MySqlConnection connect = new MySqlConnection(dbconnection);
+            string query = "DELETE FROM " + table_name + " WHERE patientID = " + num + ";";
+            MySqlCommand command = new MySqlCommand(query, connect);
+            try
+            {
+                connect.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+            finally
+            {
+                connect.Close();
+                table.DataSource = InitTable(table_name, database, password);
+            }
+        }
+
+
+        public DataTable searchBy(string tableName, string database, TextBox text, string column, string password)
+        {
+            string dbconnect = "Database=" + database + ";Data Source=localhost; User Id=root; Password=" + password + ";";
+            MySqlConnection connect = new MySqlConnection(dbconnect);
+
+            string query = "SELECT * FROM " + database + "." + tableName + " WHERE " + column + " LIKE '%" + text.Text + "%';";
+            MySqlCommand command = new MySqlCommand(query, connect);
+            DataTable data = new DataTable();
+
+            MySqlDataReader reader;
+            try
+            {
+                command.Connection.Open();
+                reader = command.ExecuteReader();
+                data.Load(reader);
+                reader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error: " + ex);
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+            return data;
+        }
+
 
         public DataTable searchBy(string tableName, string database, TextBox text, ComboBox comboBox, string password)
         {

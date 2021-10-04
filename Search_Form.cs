@@ -21,9 +21,10 @@ namespace Project
         string tablename_patients_lor = "patients_lor";
         string tablename_patients_nevropatolog = "patients_nevropatolog";
         string password = "wsk2020";
-        int[] index = {1, 2, 3, 4, 5, 6};
-        string rb1 = "PatName";
         string database = "clinic";
+        string column = "";
+
+
 
         ComboBox searchBy_comboBox = new ComboBox();
         public Search_Form()
@@ -74,17 +75,12 @@ namespace Project
             }
         }
 
-        private void main_panel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Search_Form_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void fio_radioButton_CheckedChanged(object sender, EventArgs e)
+        private void PatName_Click(object sender, EventArgs e)
         {
             //fio_radioButton.Visible = false;
             Born_year.Visible = false;
@@ -94,22 +90,9 @@ namespace Project
             Address.Visible = false;
             main_table.Enabled = true;
             search_textBox.Enabled = true;
-            
-
+            column = "PatName";
         }
-
-        private void address_radioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            PatName.Visible = false;
-            Born_year.Visible = false;
-            Doctors_Name.Visible = false;
-            Coming_Date.Visible = false;
-            Card_num.Visible = false;
-            //address_radioButton.Visible = false;
-            main_table.Enabled = true;
-            search_textBox.Enabled = true;
-            searchBy_comboBox.SelectedIndex = 4;
-        }
+       
 
         private void cancel_button_Click(object sender, EventArgs e)
         {
@@ -126,13 +109,26 @@ namespace Project
             Card_num.Checked = false;
             Address.Visible = true;
             Address.Checked = false;
+            main_table.DataSource = new DataTable();
             main_table.Enabled = false;
             content_panel.Enabled = false;
             warning_label.Visible = true;
             listOfDocs.Text = "Выберите отделение";
         }
+        private void Address_Click(object sender, EventArgs e)
+        {
+            PatName.Visible = false;
+            Born_year.Visible = false;
+            Doctors_Name.Visible = false;
+            Coming_Date.Visible = false;
+            Card_num.Visible = false;
+            //address_radioButton.Visible = false;
+            main_table.Enabled = true;
+            search_textBox.Enabled = true;
+            column = "Address";
+        }
 
-        private void number_radioButton_CheckedChanged(object sender, EventArgs e)
+        private void Card_num_Click(object sender, EventArgs e)
         {
             PatName.Visible = false;
             Born_year.Visible = false;
@@ -142,10 +138,10 @@ namespace Project
             Address.Visible = false;
             main_table.Enabled = true;
             search_textBox.Enabled = true;
-            searchBy_comboBox.SelectedIndex = 3;
+            column = "Card_num";
         }
-
-        private void year_radioButton_CheckedChanged(object sender, EventArgs e)
+   
+        private void Born_year_Click(object sender, EventArgs e)
         {
             PatName.Visible = false;
             //year_radioButton.Visible = false;
@@ -155,10 +151,11 @@ namespace Project
             Address.Visible = false;
             main_table.Enabled = true;
             search_textBox.Enabled = true;
-            searchBy_comboBox.SelectedIndex = 2;
+            column = "Born_year";
+
         }
 
-        private void visit_radioButton_CheckedChanged(object sender, EventArgs e)
+        private void Coming_Date_Click(object sender, EventArgs e)
         {
             PatName.Visible = false;
             Born_year.Visible = false;
@@ -168,29 +165,28 @@ namespace Project
             Address.Visible = false;
             main_table.Enabled = true;
             search_textBox.Enabled = true;
-            searchBy_comboBox.SelectedIndex = 6;
+            column = "Coming_Date";
+
         }
 
-        private void doc_radioButton_CheckedChanged(object sender, EventArgs e)
+        private void Doctors_Name_Click(object sender, EventArgs e)
         {
             PatName.Visible = false;
-            Born_year.Visible = false;
-            //doc_radioButton.Visible = false;
+            //Doctors_Name.Visible = false;
             Coming_Date.Visible = false;
             Card_num.Visible = false;
             Address.Visible = false;
             main_table.Enabled = true;
             search_textBox.Enabled = true;
-            searchBy_comboBox.SelectedIndex = 5;
+            column = "Doctors_Name";
         }
-
         private void search_textBox_TextChanged(object sender, EventArgs e)
         {
             switch (listOfDocs.SelectedIndex)
             {
                 case 0:
                     searchBy_comboBox.Items.Clear();
-                    main_table.DataSource = init.searchBy(tablename_patients_proktolog, database, search_textBox, searchBy_comboBox, password, PatName, Born_year, Card_num, Address, Doctors_Name, Coming_Date);
+                    main_table.DataSource = init.searchBy(tablename_patients_proktolog, database, search_textBox, column, password);
                     main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -205,7 +201,7 @@ namespace Project
                     break;
                 case 1:
                     searchBy_comboBox.Items.Clear();
-                    main_table.DataSource = init.searchBy(tablename_patients_ginekolog, database, search_textBox, searchBy_comboBox, password, PatName, Born_year, Card_num, Address, Doctors_Name, Coming_Date);
+                    main_table.DataSource = init.searchBy(tablename_patients_ginekolog, database, search_textBox, column, password);
                     main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -220,7 +216,7 @@ namespace Project
                     break;
                 case 2:
                     searchBy_comboBox.Items.Clear();
-                    main_table.DataSource = init.searchBy(tablename_patients_urolog, database, search_textBox, searchBy_comboBox, password, PatName, Born_year, Card_num, Address, Doctors_Name, Coming_Date);
+                    main_table.DataSource = init.searchBy(tablename_patients_urolog, database, search_textBox, column, password);
                     main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -235,7 +231,7 @@ namespace Project
                     break;
                 case 3:
                     searchBy_comboBox.Items.Clear();
-                    main_table.DataSource = init.searchBy(tablename_patients_mammolog, database, search_textBox, searchBy_comboBox, password, PatName, Born_year, Card_num, Address, Doctors_Name, Coming_Date);
+                    main_table.DataSource = init.searchBy(tablename_patients_mammolog, database, search_textBox, column, password);
                     main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -250,7 +246,7 @@ namespace Project
                     break;
                 case 4:
                     searchBy_comboBox.Items.Clear();
-                    main_table.DataSource = init.searchBy(tablename_patients_dermatolog, database, search_textBox, searchBy_comboBox, password, PatName, Born_year, Card_num, Address, Doctors_Name, Coming_Date);
+                    main_table.DataSource = init.searchBy(tablename_patients_dermatolog, database, search_textBox, column, password);
                     main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -265,7 +261,7 @@ namespace Project
                     break;
                 case 5:
                     searchBy_comboBox.Items.Clear();
-                    main_table.DataSource = init.searchBy(tablename_patients_lor, database, search_textBox, searchBy_comboBox, password, PatName, Born_year, Card_num, Address, Doctors_Name, Coming_Date);
+                    main_table.DataSource = init.searchBy(tablename_patients_lor, database, search_textBox, column, password);
                     main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -280,7 +276,7 @@ namespace Project
                     break;
                 case 6:
                     searchBy_comboBox.Items.Clear();
-                    main_table.DataSource = init.searchBy(tablename_patients_nevropatolog, database, search_textBox, searchBy_comboBox, password, PatName, Born_year, Card_num, Address, Doctors_Name, Coming_Date);
+                    main_table.DataSource = init.searchBy(tablename_patients_nevropatolog, database, search_textBox, column, password);
                     main_table.Columns["patientID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     main_table.Columns["PatName"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     main_table.Columns["Born_year"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -297,6 +293,39 @@ namespace Project
                     MessageBox.Show("Sorting error!");
                     break;
             }
+        }
+
+        private void clear_button_Click(object sender, EventArgs e)
+        {
+            search_textBox.Clear();
+            PatName.Visible = true;
+            PatName.Checked = false;
+            Born_year.Visible = true;
+            Born_year.Checked = false;
+            Doctors_Name.Visible = true;
+            Doctors_Name.Checked = false;
+            Coming_Date.Visible = true;
+            Coming_Date.Checked = false;
+            Card_num.Visible = true;
+            Card_num.Checked = false;
+            Address.Visible = true;
+            Address.Checked = false;
+        }
+
+        private void отменаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void посмотретьСправкуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Support sup = new Support();
+            sup.ShowDialog();
         }
     }
 }
